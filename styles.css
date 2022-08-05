@@ -1,0 +1,103 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #eee;
+}
+
+.navbar {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  min-width: 100vw;
+  height: 60px;
+  background-color: white;
+  font-size: 12px;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 0 5px 0 #ddd;
+}
+
+.search-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-section input {
+  outline: none;
+  border: none;
+  resize: none;
+  background-color: #eee;
+  width: 120%;
+  overflow: hidden;
+  padding: 0.8rem;
+  border-radius: 1000000000000px;
+}
+
+.search-section input {
+  background-image: url(/images/navbar/search-icon.svg);
+  background-position: left top;
+  background-size: 50px;
+}
+
+.navigation-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+}
+
+.nav-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #888;
+  cursor: pointer;
+  min-width: 100px;
+  padding: 0.8rem;
+}
+
+.home {
+  color: #1b74e4;
+  border-bottom: 3px solid #1b74e4;
+}
+
+.account-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.acc {
+  cursor: pointer;
+  margin-right: 1rem;
+  background-color: #ddd;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.acc:last-child {
+  margin-right: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-gap: 0.11111rem;
+  grid-template-columns: repeat(3, 6px);
+  grid-template-rows: repeat(3, 6px);
+}
+
+.grid-item {
+  background-color: black;
+  border-radius: 50%;
+}
+
+.navbar-profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
