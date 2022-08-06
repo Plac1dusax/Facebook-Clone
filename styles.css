@@ -20,10 +20,6 @@ body {
   font-display: swap;
 }
 
-.hide {
-  display: none;
-}
-
 .navbar {
   position: fixed;
   padding: 0.5rem;
@@ -134,33 +130,113 @@ body {
   justify-content: space-between;
 }
 
-.section-shortcuts {
+.shortcut-section {
   position: fixed;
   top: 60px;
   min-height: 100vh;
+  max-width: 360px;
   height: 600px;
-  padding: 0 1rem;
-  padding-bottom: 3rem;
-  overflow: auto;
 
   display: flex;
   flex-direction: column;
+  overflow: auto;
+  flex-basis: 0;
+  flex-grow: 1;
+  padding: 0 0.3rem;
+  padding-bottom: 3rem;
 }
 
-.user-shortcuts,
-.facebook-shortcuts {
+.shortcut-container {
   margin-top: 1rem;
+}
+
+.default-shortcut-container {
+  border-bottom: 0.5px solid #aaa;
+  box-shadow: 0px 1px 0px #aaa;
+}
+
+.show-btn-default {
+  margin-bottom: 1rem;
+}
+
+.shortcut {
   display: flex;
   align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
 }
 
 .shortcut img {
-  margin-right: 1rem;
-  height: 36px;
   width: 36px;
+  height: 36px;
+  margin-right: 1rem;
 }
 
-.custom-shortcut-edit {
+.shortcut:hover {
+  background-color: hsla(0, 0%, 87%, 0.673);
+  border-radius: 0.3em;
+  cursor: pointer;
+}
+
+.show-btn {
+  display: flex;
+  align-items: center;
+  padding: 0 0.3rem;
+}
+
+.show-btn svg {
+  margin-right: 1rem;
+  padding: 0.3rem;
+  background-color: #ddd;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+}
+
+.personal-shortcut-text {
   display: flex;
   justify-content: space-between;
+  margin-top: 0.3rem;
+}
+
+.your-shortcuts {
+  font-size: 1.0625rem;
+  color: #65676b;
+  font-weight: 600;
+  padding: 0 0.3rem;
+}
+
+.edit {
+  color: #216fdb;
+  font-size: 0.9375rem;
+  font-weight: 400;
+}
+
+.custom-shortcuts {
+  margin-top: 1rem;
+}
+
+.footer {
+  word-wrap: break-word;
+  max-width: initial;
+}
+
+.footer-list {
+  padding: 0 0.3rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-decoration: none;
+  list-style: none;
+}
+
+.footer-list li {
+  font-size: 0.8125rem;
+  margin-right: 0.5rem;
+}
+
+.hide {
+  display: none;
 }
