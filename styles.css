@@ -4,12 +4,28 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: Segoe UI Historic;
+  src: url("/fonts/Segoe\ ui\ historic.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
+  padding: 0;
   margin: 0;
   background-color: #eee;
+  overflow-x: hidden;
+  font-family: "Segoe UI", sans-serif;
+  font-display: swap;
+}
+
+.hide {
+  display: none;
 }
 
 .navbar {
+  position: fixed;
   padding: 0.5rem;
   display: flex;
   justify-content: space-between;
@@ -110,4 +126,41 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.main-feed {
+  display: flex;
+  justify-content: space-between;
+}
+
+.section-shortcuts {
+  position: fixed;
+  top: 60px;
+  min-height: 100vh;
+  height: 600px;
+  padding: 0 1rem;
+  padding-bottom: 3rem;
+  overflow: auto;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.user-shortcuts,
+.facebook-shortcuts {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.shortcut img {
+  margin-right: 1rem;
+  height: 36px;
+  width: 36px;
+}
+
+.custom-shortcut-edit {
+  display: flex;
+  justify-content: space-between;
 }
