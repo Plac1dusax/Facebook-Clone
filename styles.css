@@ -193,7 +193,9 @@ body {
 }
 
 .shortcut:hover,
-.person:hover {
+.person:hover,
+.group:hover,
+.create-group:hover {
   background-color: hsla(0, 0%, 87%, 0.673);
   border-radius: 0.3em;
   cursor: pointer;
@@ -287,6 +289,10 @@ body {
 
 .contacts-header-svg div {
   margin-right: 1rem;
+}
+
+.contacts-header-svg:nth-child(2n) {
+  cursor: pointer;
 }
 
 .contacts-section .person {
@@ -391,6 +397,27 @@ body {
   border-radius: 50%;
   box-shadow: 0 0 3px #777;
   padding: 1rem;
+  cursor: pointer;
+}
+
+.create-group {
+  display: flex;
+  margin-top: 1rem;
+  align-items: center;
+}
+
+.create-group svg {
+  width: 32px;
+  height: 32px;
+  margin-right: 1rem;
+  background-color: #ddd;
+  border-radius: 50%;
+  padding: 0.4rem;
+  cursor: pointer;
+}
+
+.create-group div {
+  cursor: pointer;
 }
 
 .hide {
