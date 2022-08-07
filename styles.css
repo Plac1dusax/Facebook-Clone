@@ -33,6 +33,10 @@ body {
   box-shadow: 0 0 5px 0 #ddd;
 }
 
+.facebook-logo:hover {
+  cursor: pointer;
+}
+
 .search-section {
   display: flex;
   align-items: center;
@@ -40,7 +44,7 @@ body {
 }
 
 .search-section input {
-  background: url(/images/navbar/search-icon.svg) no-repeat;
+  background: url(./images/navbar/search-icon.svg) no-repeat;
   background-position: left 5% center;
   background-size: 10px;
 }
@@ -118,19 +122,31 @@ body {
   border-radius: 50%;
 }
 
-.navbar-profile-picture {
+.navbar-profile-picture,
+.person img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   margin-right: 1rem;
 }
 
+.navbar-profile-picture:hover {
+  cursor: pointer;
+}
+
 .main-feed {
   display: flex;
   justify-content: space-between;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
-.shortcut-section {
+.a {
+  justify-self: flex-end;
+}
+
+.shortcut-section,
+.contacts-section {
   position: fixed;
   top: 60px;
   min-height: 100vh;
@@ -150,7 +166,9 @@ body {
   margin-top: 1rem;
 }
 
-.default-shortcut-container {
+.default-shortcut-container,
+.sponsored-container,
+.person-container {
   border-bottom: 0.5px solid #aaa;
   box-shadow: 0px 1px 0px #aaa;
 }
@@ -159,7 +177,8 @@ body {
   margin-bottom: 1rem;
 }
 
-.shortcut {
+.shortcut,
+.person {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
@@ -173,7 +192,8 @@ body {
   margin-right: 1rem;
 }
 
-.shortcut:hover {
+.shortcut:hover,
+.person:hover {
   background-color: hsla(0, 0%, 87%, 0.673);
   border-radius: 0.3em;
   cursor: pointer;
@@ -192,6 +212,15 @@ body {
   border-radius: 50%;
   width: 36px;
   height: 36px;
+}
+
+.sponsored-container {
+  padding-bottom: 1rem;
+}
+
+.show-btn:hover,
+.edit:hover {
+  cursor: pointer;
 }
 
 .personal-shortcut-text {
@@ -235,6 +264,133 @@ body {
 .footer-list li {
   font-size: 0.8125rem;
   margin-right: 0.5rem;
+}
+
+.contacts-section {
+  right: 0;
+  width: 360px;
+  margin-top: 1rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.contacts-header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.contacts-header-svg {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contacts-header-svg div {
+  margin-right: 1rem;
+}
+
+.contacts-section .person {
+  margin-top: 1rem;
+}
+
+.person {
+  position: relative;
+}
+
+.person::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: green;
+  right: 89%;
+  top: 70%;
+  padding: 0.2rem;
+  border: 2px solid white;
+}
+
+.group {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.group-images {
+  padding-right: 3rem;
+}
+
+.group-images img {
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+}
+
+.group-images {
+  position: relative;
+  width: 36px;
+  height: 36px;
+}
+
+.group-images::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  right: 20%;
+  bottom: 0%;
+  background-color: green;
+  padding: 0.2rem;
+  border: 2px solid white;
+  z-index: 3;
+}
+
+.group-img-1 {
+  position: absolute;
+  top: 35%;
+  z-index: 2;
+}
+
+.group-img-2 {
+  position: absolute;
+  left: 25%;
+}
+
+.group-name {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.title:first-child {
+  margin-top: 0;
+}
+
+.contacts-header-svg svg {
+  color: #666;
+}
+
+.create-message-container {
+  position: absolute;
+  bottom: 12%;
+  right: 15%;
+}
+
+.create-message img {
+  width: 18px;
+  height: 18px;
+}
+
+.create-message {
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 3px #777;
+  padding: 1rem;
 }
 
 .hide {
