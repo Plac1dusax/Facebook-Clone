@@ -31,6 +31,7 @@ body {
   font-size: 12px;
   border-bottom: 1px solid #ddd;
   box-shadow: 0 0 5px 0 #ddd;
+  z-index: 5;
 }
 
 .facebook-logo:hover {
@@ -351,6 +352,10 @@ body {
   z-index: 3;
 }
 
+.groups-section-container {
+  margin-top: 1rem;
+}
+
 .group-img-1 {
   position: absolute;
   top: 35%;
@@ -418,6 +423,245 @@ body {
 
 .create-group div {
   cursor: pointer;
+}
+
+.main-feed-section {
+  margin-left: 360px;
+  margin-right: 360px;
+  padding: 2rem;
+
+  position: relative;
+  top: 60px;
+  min-width: calc(100% - 720px);
+}
+
+.story-section {
+  width: calc(5 * 118px);
+  margin: auto;
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.story {
+  position: relative;
+  width: 110px;
+  height: 190px;
+  background-color: white;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.profile-picture {
+  width: 40px;
+  height: 40px;
+
+  position: absolute;
+  top: 5%;
+  left: 10%;
+
+  border-radius: 50%;
+  border: 3px solid blue;
+}
+
+.story-image,
+.personal-image {
+  width: 110px;
+  height: 190px;
+  overflow: hidden;
+
+  position: absolute;
+
+  border-radius: 0.3em;
+
+  transition: 0.5s all ease-in-out;
+}
+
+.user-name {
+  color: #eee;
+  font-weight: bold;
+
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  font-size: 0.8rem;
+}
+
+.personal-image {
+  width: 110px;
+  height: 140px;
+
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+
+  border-radius: 0.3em;
+
+  transition: 0.5s all ease-in-out;
+}
+
+.add-story-svg-container {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 100px;
+  left: 55px;
+  transform: translate(-50%, 50%);
+
+  border-radius: 50%;
+  background-color: #1b74e4;
+  border: 5px solid white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-story-svg-container::after {
+  content: "Create story";
+  position: absolute;
+  white-space: nowrap;
+  font-weight: 500;
+  font-size: 0.8rem;
+  top: 100%;
+}
+
+.add-story-btn {
+  color: white;
+  display: flex;
+}
+
+.story-image:hover,
+.personal-image:hover {
+  transform: scale(1.1);
+  filter: grayscale(40%);
+}
+
+.story:hover {
+  background-color: hsla(0, 0%, 86%, 0.225);
+}
+
+.next-btn {
+  position: absolute;
+  color: #555;
+  font-weight: 500;
+  right: -3%;
+  background-color: white;
+  box-shadow: 0 0 3px #888;
+  padding: 0.7rem;
+  border-radius: 50%;
+  top: 40%;
+}
+
+.next-btn:hover {
+  background-color: #eee;
+}
+
+.on-your-mind-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 590px;
+  margin: 0 auto;
+  border-radius: 0.3em;
+  width: 590px;
+  margin-top: 2rem;
+  background-color: white;
+  padding: 1rem;
+}
+
+.personal-share-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.5rem;
+
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 0.5rem;
+}
+
+.profile-photo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.personal-share-input {
+  outline: none;
+  border: none;
+  border-radius: 100000000000px;
+  background-color: #ddd;
+  width: 100%;
+  height: 2.5rem;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+}
+
+.personal-share-icons-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #999;
+}
+
+.icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon svg {
+  margin-right: 0.5rem;
+}
+
+.icon-live-svg {
+  color: rgb(226, 55, 83);
+}
+
+.icon-photo-svg {
+  color: rgb(26, 172, 26);
+}
+
+.icon-activity-svg {
+  color: rgb(166, 166, 24);
+}
+
+.create-room-section {
+  width: 100%;
+  min-width: 590px;
+  border-radius: 0.3em;
+  width: 590px;
+  margin: 2rem auto;
+  background-color: white;
+  padding: 1rem;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.create-room {
+  margin-right: 1rem;
+  margin-left: 0.5rem;
+  color: #1b74e4;
+  font-weight: 500;
+}
+
+.create-room-section svg {
+  color: linear-gradient(pink, purple);
+}
+
+.person-create-room img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
 }
 
 .hide {
