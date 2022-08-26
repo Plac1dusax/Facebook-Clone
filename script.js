@@ -16,6 +16,8 @@ let likeCounter = parseInt(document.querySelector(".like-counter").textContent)
 const totalLikes = document.querySelector(".like-counter")
 const emojis = document.querySelectorAll(".emoji")
 const posts = document.querySelectorAll(".post")
+const commentSection = document.querySelectorAll("[data-comment-section]")
+const replyNotification = document.querySelectorAll(".reply-notification")
 
 for (let i = 0; i < posts.length; i++) {
   posts[i].dataset.id = i
@@ -128,6 +130,16 @@ for (let i = 0; i < likeButton.length; i++) {
     addAnimation(e, "data-reaction-angry", "Angry", "red", "like-btn-angry")
   })
 }
+
+replyNotification.forEach(notification => {
+  notification.addEventListener("click", e => {
+    const comments = e.target.closest("[data-comment-section]")
+    const replies = comments.querySelector(".reply")
+    const replyNotificationSection = e.target.closest("[data-notification]")
+    replyNotificationSection.style.display = "none"
+    replies.classList.remove("hide")
+  })
+})
 
 function playAnimation(e, dataAttribute, text, color, animation) {
   const button = e.target.closest("[data-like-btn]")
