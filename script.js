@@ -16,8 +16,16 @@ let likeCounter = parseInt(document.querySelector(".like-counter").textContent)
 const totalLikes = document.querySelector(".like-counter")
 const emojis = document.querySelectorAll(".emoji")
 const posts = document.querySelectorAll(".post")
-const commentSection = document.querySelectorAll("[data-comment-section]")
 const replyNotification = document.querySelectorAll(".reply-notification")
+const replyButton = document.querySelectorAll(".comment-reaction-reply")
+const userCommentText = document.querySelectorAll(".user-comment-text")
+const sameCommentLine = document.querySelector("#same-command")
+const repliesSection = document.querySelectorAll(".replies-section")
+const userCommentInput = document.querySelectorAll(".user-comment-input")
+const commentTemplate = document.querySelector("#comment-template")
+const replyCommentTemplate = document.querySelector("#reply-comment-template")
+const repliedReplyTemplate = document.querySelector("#replied-reply-template")
+const postCommentInput = document.querySelectorAll(".post-comment")
 
 for (let i = 0; i < posts.length; i++) {
   posts[i].dataset.id = i
@@ -131,14 +139,106 @@ for (let i = 0; i < likeButton.length; i++) {
   })
 }
 
-replyNotification.forEach(notification => {
-  notification.addEventListener("click", e => {
-    const comments = e.target.closest("[data-comment-section]")
-    const replies = comments.querySelector(".reply")
-    const replyNotificationSection = e.target.closest("[data-notification]")
-    replyNotificationSection.style.display = "none"
-    replies.classList.remove("hide")
+postCommentInput.forEach(comment => {
+  comment.addEventListener("keydown", e => {
+    if (e.keyCode === 13) {
+      const value = comment.value
+      const container = e.target.closest(".comment-section")
+      const replyContainer = container.querySelector(".replies-container")
+      const commentContainer = replyCommentTemplate.content.cloneNode(true)
+
+      const input = commentContainer.querySelector("[data-comment]")
+      input.textContent = value
+
+      replyContainer.appendChild(commentContainer)
+    }
   })
+})
+
+document.addEventListener("click", e => {
+  if (
+    e.target.matches(".reply-notification") ||
+    e.target.matches(".reply-logo") ||
+    e.target.matches(".reply-notification-text")
+  ) {
+    const container = e.target.closest(".reply")
+    const repliedMessage = container.querySelector(".replies-container-replied")
+    const replyNotification = container.querySelector(".reply-notification")
+
+    repliedMessage.classList.remove("hide")
+    replyNotification.style.display = "none"
+  }
+
+  if (e.target.matches(".comment-reaction-reply")) {
+    const container = e.target.closest(".reply")
+    const userInput = container.querySelector(".user-comment-reply")
+    const notification = container.querySelector(".reply-notification")
+    // const repliedMessage = container.querySelector(".replies-container-replied")
+
+    userInput.style.display = ""
+    // repliedMessage.classList.remove("hide")
+  }
+})
+
+// replyNotification.forEach(notification => {
+//   notification.addEventListener("click", e => {
+//     const container = e.target.closest(".reply")
+//     const notification = container.querySelector(".reply-notification")
+//     const repliedMessage = container.querySelector(".replies-container-replied")
+
+//     notification.style.display = "none"
+//     repliedMessage.classList.remove("hide")
+//   })
+// })
+
+replyButton.forEach(button => {
+  button.addEventListener("click", e => {
+    const container = e.target.closest(".reply")
+    const userInputArea = container.querySelector(".user-comment-reply")
+    userInputArea.style.display = ""
+  })
+})
+
+document.addEventListener("click", e => {
+  if (e.target.matches(".user-comment-input")) {
+    const inputArea = e.target
+
+    inputArea.addEventListener("keydown", e => {
+      if (e.keyCode === 13) {
+        const value = inputArea.value
+        const container = e.target.closest(".reply")
+
+        if (container != null) {
+          const userInputArea = container.querySelector(".user-comment-reply")
+          const replyContainer = container.querySelector(
+            ".replies-container-replied"
+          )
+          inputArea.value = ""
+        }
+
+        if (replyContainer != null) {
+          const replyComment = replyCommentTemplate.content.cloneNode(true)
+
+          const input = replyComment.querySelector("[data-comment]")
+          input.textContent = value
+
+          replyContainer.appendChild(replyComment)
+        }
+
+        if (replyContainer == null) {
+          const repliedReplyContainer =
+            repliedReplyTemplate.content.cloneNode(true)
+
+          const input = repliedReplyContainer.querySelector("[data-comment]")
+          input.textContent = value
+          console.log(container)
+          container.appendChild(repliedReplyContainer)
+        }
+        inputArea.value = ""
+        userInputArea.style.display = "none"
+      }
+    })
+  }
 })
 
 function playAnimation(e, dataAttribute, text, color, animation) {

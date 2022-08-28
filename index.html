@@ -594,6 +594,8 @@
             <div class="send-btn-text btn-text">Send</div>
             </div>
           </div>
+
+
           <div class="comment-section">
             <div class="filter">
               <div class="filter-options">Most Relevant</div>
@@ -604,7 +606,7 @@
                 <img class="user-profile-photo" src="./images/profile-picture/avatar_hu8d30e29128cae2b0d49276543cea6665_24055_250x250_fill_q90_lanczos_center.jpg" >
               </div>
               <div class="user-comment-area">
-                <input  placeholder="Write a comment..." type="text">
+                <input class="user-comment-input post-comment"  placeholder="Write a comment..." type="text">
                 <div class="comment-icons-container">
                   <i class="comment-icon comment-icon-avatar"></i>
                   <i class="comment-icon  comment-icon-emoji"></i>
@@ -614,65 +616,93 @@
                 </div>
               </div>
             </div>
-            <div class="replies">
-              <div class="replie-message">
-                <div class="comentator-section">
-                  <img class="user-profile-photo" src="./images/profile-picture/photo-1500648767791-00dcc994a43e.jpg">
-                  <div class="comment-contents">
-                    <div class="content">
-                      <div class="comentator-name">Random User</div>
-                      <div class="comment">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti, in.</div>
+
+            <div class="replies-section">
+              <div class="replies-container">
+
+
+                <div class="reply">
+                 
+                  <div class="profile-picture-and-content comment-flex">
+                    <div class="comment-profile-picture">
+                      <img src="./images/profile-picture/photo-1491349174775-aaafddd81942.jpg" >
                     </div>
-                    <div class="reaction-container">
+                    <div class="content comment-flex">
+                    <div class="commentator-name">Random User</div>
+                    <div class="comment-content">Lorem ipsum dolor sit amet.</div>
+                    <div class="comment-reactions comment-flex">
                       <div class="comment-reaction comment-reaction-like">Like</div>
                       <div class="comment-reaction comment-reaction-reply">Reply</div>
-                      <div class="comment-reaction comment-reaction-time">2h</div>
+                      <div class="comment-time">2h</div>
+                    </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div  class="replie-message">
-                <div data-comment-section class="comentator-section">
-                  <img class="user-profile-photo" src="./images/profile-picture/photo-1500648767791-00dcc994a43e.jpg">
-                  <div class="comment-contents">
-                    <div class="content">
-                      <div class="comentator-name">Random User</div>
-                      <div class="comment">Lorem ipsum dolor sit amet.</div>
+                  <div class="reply-notification">
+                    <div class="reply-logo"></div>
+                    <div class="reply-notification-text">1 reply</div>
+                  </div>
+                  <div class="user-comment-reply" style="display: none;">
+                    <div class="user-profile-pic">
+                      <img class="user-profile-photo" src="./images/profile-picture/avatar_hu8d30e29128cae2b0d49276543cea6665_24055_250x250_fill_q90_lanczos_center.jpg" >
                     </div>
-                    <div class="reaction-container">
-                      <div class="comment-reaction comment-reaction-like">Like</div>
-                      <div class="comment-reaction comment-reaction-reply">Reply</div>
-                      <div class="comment-reaction comment-reaction-time">2h</div>
+                    <div class="user-comment-area">
+                      <input class="user-comment-input"  placeholder="Write a comment..." type="text">
+                      <div class="comment-icons-container">
+                        <i class="comment-icon comment-icon-avatar"></i>
+                        <i class="comment-icon  comment-icon-emoji"></i>
+                        <i class="comment-icon  comment-icon-photo"></i>
+                        <i class="comment-icon  comment-icon-gif"></i>
+                        <i class="comment-icon  comment-icon-sticker"></i>
+                      </div>
                     </div>
-                    <div data-notification class="reply-notification">
-                      <div class="reply-logo"></div>
-                      <div class="reply-notification-text">1 replie</div>
-                    </div>
-                    <div class="reply hide">
-                      <div class="reply-emblem"></div>
-                      <div class="replie-message">
-                        <div class="comentator-section-reply">
-                          <img class="user-profile-photo" src="./images/profile-picture/photo-1500648767791-00dcc994a43e.jpg">
-                          <div class="comment-contents">
-                            <div class="content">
-                              <div class="comentator-name">Random User</div>
-                              <div class="comment">Lorem ipsum dolor sit amet.</div>
-                            </div>
-                            <div class="reaction-container">
-                              <div class="comment-reaction comment-reaction-like">Like</div>
-                              <div class="comment-reaction comment-reaction-reply">Reply</div>
-                              <div class="comment-reaction comment-reaction-time">2h</div>
-                            </div> 
+                  </div>
+
+                  <div class="replies-container-replied hide">
+                    <div class="reply">
+                 
+                      <div class="profile-picture-and-content comment-flex">
+                        <div class="comment-profile-picture">
+                          <img src="./images/profile-picture/photo-1491349174775-aaafddd81942.jpg" >
+                        </div>
+                        <div class="content comment-flex">
+                        <div class="commentator-name">Random User</div>
+                        <div class="comment-content">Lorem ipsum dolor sit amet.</div>
+                        <div class="comment-reactions comment-flex">
+                          <div class="comment-reaction comment-reaction-like">Like</div>
+                          <div class="comment-reaction comment-reaction-reply">Reply</div>
+                          <div class="comment-time">2h</div>
+                        </div>
+                        </div>
+                      </div>
+                      <div class="user-comment-reply" style="display: none;">
+                        <div class="user-profile-pic">
+                          <img class="user-profile-photo" src="./images/profile-picture/avatar_hu8d30e29128cae2b0d49276543cea6665_24055_250x250_fill_q90_lanczos_center.jpg" >
+                        </div>
+                        <div class="user-comment-area">
+                          <input class="user-comment-input"  placeholder="Write a comment..." type="text">
+                          <div class="comment-icons-container">
+                            <i class="comment-icon comment-icon-avatar"></i>
+                            <i class="comment-icon  comment-icon-emoji"></i>
+                            <i class="comment-icon  comment-icon-photo"></i>
+                            <i class="comment-icon  comment-icon-gif"></i>
+                            <i class="comment-icon  comment-icon-sticker"></i>
                           </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  </div>
-                  </div>
-                </div>
-              </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+
+
+
+
+
+        
         <div data-id class="post">
           <header class="post-header">
             <div class="profile-img-container">
@@ -701,7 +731,6 @@
             </div>
           </header>
           <div class="post-body">
-            <div class="comment"></div>
             <img src="./images/posts/thumb-1920-682878.jpg"" alt="">
           </div>
 
@@ -774,6 +803,33 @@
               <svg viewBox="0 0 28 28" alt="" class="a8c37x1j ms05siws l3qrxjdp b7h9ocf4 rs22bh7c" fill="currentColor" height="20" width="20"><path d="M14 2.042c6.76 0 12 4.952 12 11.64S20.76 25.322 14 25.322a13.091 13.091 0 0 1-3.474-.461.956 .956 0 0 0-.641.047L7.5 25.959a.961.961 0 0 1-1.348-.849l-.065-2.134a.957.957 0 0 0-.322-.684A11.389 11.389 0 0 1 2 13.682C2 6.994 7.24 2.042 14 2.042ZM6.794 17.086a.57.57 0 0 0 .827.758l3.786-2.874a.722.722 0 0 1 .868 0l2.8 2.1a1.8 1.8 0 0 0 2.6-.481l3.525-5.592a.57.57 0 0 0-.827-.758l-3.786 2.874a.722.722 0 0 1-.868 0l-2.8-2.1a1.8 1.8 0 0 0-2.6.481Z"></path></svg>
             </div>
             <div class="send-btn-text btn-text">Send</div>
+            </div>
+          </div>
+          <div class="comment-section">
+            <div class="filter">
+              <div class="filter-options">Most Relevant</div>
+              <div class="arrow"></div>
+            </div>
+            <div class="user-comment">
+              <div class="user-profile-pic">
+                <img class="user-profile-photo" src="./images/profile-picture/avatar_hu8d30e29128cae2b0d49276543cea6665_24055_250x250_fill_q90_lanczos_center.jpg" >
+              </div>
+              <div class="user-comment-area">
+                <input class="user-comment-input post-comment"  placeholder="Write a comment..." type="text">
+                <div class="comment-icons-container">
+                  <i class="comment-icon comment-icon-avatar"></i>
+                  <i class="comment-icon  comment-icon-emoji"></i>
+                  <i class="comment-icon  comment-icon-photo"></i>
+                  <i class="comment-icon  comment-icon-gif"></i>
+                  <i class="comment-icon  comment-icon-sticker"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="replies-section">
+              <div class="replies-container">
+              
+              </div>
             </div>
           </div>
         </div>
@@ -869,8 +925,95 @@
 
        </section>
     </main>
-
-    
+<template id="comment-template">
+            <div class="reply">
+                  <div class="profile-picture-and-content comment-flex">
+                    <div class="comment-profile-picture">
+                      <img src="./images/profile-picture/avatar_hu8d30e29128cae2b0d49276543cea6665_24055_250x250_fill_q90_lanczos_center.jpg" >
+                    </div>
+                    <div class="content comment-flex">
+                    <div class="commentator-name">User Name</div>
+                    <div data-comment class="comment-content"></div>
+                    <div class="comment-reactions comment-flex">
+                      <div class="comment-reaction comment-reaction-like">Like</div>
+                      <div class="comment-reaction comment-reaction-reply">Reply</div>
+                      <div class="comment-time">2h</div>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+</template>
+<template id="reply-comment-template">
+  <div class="reply">
+                 
+    <div class="profile-picture-and-content comment-flex">
+      <div class="comment-profile-picture">
+        <img src="./images/profile-picture/avatar_hu8d30e29128cae2b0d49276543cea6665_24055_250x250_fill_q90_lanczos_center.jpg" >
+      </div>
+      <div class="content comment-flex">
+      <div class="commentator-name">User Name</div>
+      <div data-comment class="comment-content"></div>
+      <div class="comment-reactions comment-flex">
+        <div class="comment-reaction comment-reaction-like">Like</div>
+        <div class="comment-reaction comment-reaction-reply">Reply</div>
+        <div class="comment-time">2h</div>
+      </div>
+      </div>
+    </div>
+    <div class="user-comment-reply" style="display: none;">
+      <div class="user-profile-pic">
+        <img class="user-profile-photo" src="./images/profile-picture/avatar_hu8d30e29128cae2b0d49276543cea6665_24055_250x250_fill_q90_lanczos_center.jpg" >
+      </div>
+      <div class="user-comment-area">
+        <input class="user-comment-input"  placeholder="Write a comment..." type="text">
+        <div class="comment-icons-container">
+          <i class="comment-icon comment-icon-avatar"></i>
+          <i class="comment-icon  comment-icon-emoji"></i>
+          <i class="comment-icon  comment-icon-photo"></i>
+          <i class="comment-icon  comment-icon-gif"></i>
+          <i class="comment-icon  comment-icon-sticker"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</template>
+<template id="replied-reply-template">
+  <div class="replies-container-replied ">
+    <div class="reply">
+ 
+      <div class="profile-picture-and-content comment-flex">
+        <div class="comment-profile-picture">
+          <img src="./images/profile-picture/photo-1491349174775-aaafddd81942.jpg" >
+        </div>
+        <div class="content comment-flex">
+        <div class="commentator-name">User Name</div>
+        <div data-comment class="comment-content"></div>
+        <div class="comment-reactions comment-flex">
+          <div class="comment-reaction comment-reaction-like">Like</div>
+          <div class="comment-reaction comment-reaction-reply">Reply</div>
+          <div class="comment-time">2h</div>
+        </div>
+        </div>
+      </div>
+      <div class="user-comment-reply" style="display: none;">
+        <div class="user-profile-pic">
+          <img class="user-profile-photo" src="./images/profile-picture/avatar_hu8d30e29128cae2b0d49276543cea6665_24055_250x250_fill_q90_lanczos_center.jpg" >
+        </div>
+        <div class="user-comment-area">
+          <input class="user-comment-input"  placeholder="Write a comment..." type="text">
+          <div class="comment-icons-container">
+            <i class="comment-icon comment-icon-avatar"></i>
+            <i class="comment-icon  comment-icon-emoji"></i>
+            <i class="comment-icon  comment-icon-photo"></i>
+            <i class="comment-icon  comment-icon-gif"></i>
+            <i class="comment-icon  comment-icon-sticker"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
   </body>
 
 </html>

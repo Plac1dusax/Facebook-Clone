@@ -1016,7 +1016,8 @@ body {
   align-self: flex-start;
 }
 
-.user-comment {
+.user-comment,
+.user-comment-reply {
   width: 100%;
   padding: 0.5rem 1rem;
 
@@ -1096,82 +1097,58 @@ body {
   background-position-y: 88.1%;
 }
 
-.replies {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 0.5rem;
-  padding: 0.5rem 1rem;
-  font-size: 0.9rem;
-}
-
-.replie-message {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 0.5rem;
-}
-
-.comentator-section,
-.comentator-section-reply {
+.comment-flex {
   display: flex;
 }
 
-.comentator-section-reply {
-  margin-top: 0.5rem;
+.profile-picture-and-content {
+  padding: 0.5rem;
 }
 
-.comentator-section img {
-  margin-right: 0.2rem;
-  width: 2rem;
-  height: 2rem;
+.reply {
+  padding: 0 0.5rem;
+}
+
+.replies-container {
+  margin-left: 0.5rem;
+}
+
+.replies-container-replied {
+  margin-left: 2rem;
 }
 
 .content {
+  flex-direction: column;
+  padding: 0.5rem;
+  border-radius: 0.6em;
+  margin-left: 0.5rem;
+
   background-color: #eee;
-  border-radius: 9999999999px;
-  padding: 0.3rem 1.5rem;
 }
 
-.comentator-name {
+.commentator-name {
   font-weight: bold;
-  color: black;
 }
 
-.comment {
+.comment-reactions {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #777;
+}
+
+.comment-time {
   font-weight: normal;
 }
 
-.reaction-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-left: 1rem;
-}
-
 .comment-reaction {
-  margin-left: 0.5rem;
-  color: grey;
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-
-.comment-reaction-time {
-  font-weight: 100;
-  font-size: 0.7rem;
-}
-
-.reply-notification {
-  margin-left: 1.5rem;
-  margin-top: 0.3rem;
+  margin-right: 0.6rem;
   cursor: pointer;
-
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
 }
 
-.reply-notification-text {
-  font-weight: bold;
-  color: #aaa;
+.comment-profile-picture img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
 }
 
 .reply-logo {
@@ -1180,6 +1157,23 @@ body {
   background-position-y: 92.6%;
   width: 1rem;
   height: 1rem;
+}
+
+.user-comment-reply {
+  margin-left: 2rem;
+  max-width: 90%;
+}
+
+.reply-notification {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  margin-left: 3rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #777;
+  cursor: pointer;
 }
 
 @keyframes reaction {
