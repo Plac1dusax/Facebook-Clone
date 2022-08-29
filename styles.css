@@ -939,7 +939,8 @@ body {
   align-items: center;
 }
 
-.emotions-container img {
+.emotions-container img,
+.emotions-container-comment img {
   width: 3rem;
   height: 3rem;
   transform: scale() 200ms;
@@ -957,6 +958,7 @@ body {
   margin-left: 0.7rem;
 }
 .emotions-container img:hover,
+.emoji > img:hover,
 .care img:hover {
   transform: scale(2);
 }
@@ -974,9 +976,6 @@ body {
   width: 1.5rem;
   height: 1.5rem;
   background-position-y: 10%;
-}
-.hide {
-  display: none;
 }
 
 .user-profile-photo {
@@ -1054,11 +1053,12 @@ body {
   width: 100%;
   border-radius: 999999999px;
   padding: 1.1rem 0.8rem;
+  padding-right: 8rem;
   border: none;
   outline: none;
   height: 2rem;
   background-color: #eee;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
 }
 
 .comment-icons-container {
@@ -1134,6 +1134,8 @@ body {
   font-size: 0.8rem;
   font-weight: bold;
   color: #777;
+  position: relative;
+  margin-top: 0.25rem;
 }
 
 .comment-time {
@@ -1164,6 +1166,11 @@ body {
   max-width: 90%;
 }
 
+.user-comment-input {
+  color: black;
+  white-space: initial;
+}
+
 .reply-notification {
   display: flex;
   justify-content: flex-start;
@@ -1176,6 +1183,33 @@ body {
   cursor: pointer;
 }
 
+.emotions-container-comment {
+  position: absolute;
+  background-color: white;
+  border-radius: 50000000000000000px;
+  left: -0.5rem;
+  top: -3rem;
+  box-shadow: 0 0 2px black;
+  z-index: 10;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-like-btn-container {
+  position: absolute;
+  right: 0%;
+  bottom: -120%;
+  background-color: white;
+  padding: 0 0.5rem;
+  border-radius: 0.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @keyframes reaction {
   0% {
   }
@@ -1186,4 +1220,8 @@ body {
 
   100% {
   }
+}
+
+.hide {
+  display: none;
 }

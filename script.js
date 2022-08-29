@@ -26,6 +26,7 @@ const commentTemplate = document.querySelector("#comment-template")
 const replyCommentTemplate = document.querySelector("#reply-comment-template")
 const repliedReplyTemplate = document.querySelector("#replied-reply-template")
 const postCommentInput = document.querySelectorAll(".post-comment")
+const commentReaction = document.querySelectorAll(".comment-reaction-like")
 
 for (let i = 0; i < posts.length; i++) {
   posts[i].dataset.id = i
@@ -173,23 +174,10 @@ document.addEventListener("click", e => {
     const container = e.target.closest(".reply")
     const userInput = container.querySelector(".user-comment-reply")
     const notification = container.querySelector(".reply-notification")
-    // const repliedMessage = container.querySelector(".replies-container-replied")
 
     userInput.style.display = ""
-    // repliedMessage.classList.remove("hide")
   }
 })
-
-// replyNotification.forEach(notification => {
-//   notification.addEventListener("click", e => {
-//     const container = e.target.closest(".reply")
-//     const notification = container.querySelector(".reply-notification")
-//     const repliedMessage = container.querySelector(".replies-container-replied")
-
-//     notification.style.display = "none"
-//     repliedMessage.classList.remove("hide")
-//   })
-// })
 
 replyButton.forEach(button => {
   button.addEventListener("click", e => {
@@ -214,32 +202,162 @@ document.addEventListener("click", e => {
             ".replies-container-replied"
           )
           inputArea.value = ""
+
+          if (replyContainer != null) {
+            const replyComment = replyCommentTemplate.content.cloneNode(true)
+
+            const input = replyComment.querySelector("[data-comment]")
+            input.textContent = value
+
+            replyContainer.appendChild(replyComment)
+          }
+
+          if (replyContainer == null) {
+            const repliedReplyContainer =
+              repliedReplyTemplate.content.cloneNode(true)
+
+            const input = repliedReplyContainer.querySelector("[data-comment]")
+            input.textContent = value
+            console.log(container)
+            container.appendChild(repliedReplyContainer)
+          }
+          inputArea.value = ""
+          userInputArea.style.display = "none"
         }
-
-        if (replyContainer != null) {
-          const replyComment = replyCommentTemplate.content.cloneNode(true)
-
-          const input = replyComment.querySelector("[data-comment]")
-          input.textContent = value
-
-          replyContainer.appendChild(replyComment)
-        }
-
-        if (replyContainer == null) {
-          const repliedReplyContainer =
-            repliedReplyTemplate.content.cloneNode(true)
-
-          const input = repliedReplyContainer.querySelector("[data-comment]")
-          input.textContent = value
-          console.log(container)
-          container.appendChild(repliedReplyContainer)
-        }
-        inputArea.value = ""
-        userInputArea.style.display = "none"
       }
     })
   }
 })
+
+commentReaction.forEach(react => {
+  react.addEventListener("mouseenter", e => {
+    const container = e.target.closest(".profile-picture-and-content")
+    const emotions = container.querySelector(".emotions-container-comment")
+
+    emotions.classList.remove("hide")
+  })
+
+  react.addEventListener("mouseleave", e => {
+    const container = e.target.closest(".profile-picture-and-content")
+    const emotions = container.querySelector(".emotions-container-comment")
+
+    emotions.classList.add("hide")
+  })
+
+  react.addEventListener("click", e => {
+    if (e.target.matches(".comment-reaction-like-text")) {
+      commentReact(
+        e,
+        ".comment-like-btn-container",
+        ".community-reaction-like",
+        "Like",
+        "blue"
+      )
+    }
+
+    if (e.target.matches("[data-reaction-like]")) {
+      commentReact(
+        e,
+        ".comment-like-btn-container",
+        ".community-reaction-like",
+        "Like",
+        "blue"
+      )
+    }
+
+    if (e.target.matches("[data-reaction-love]")) {
+      commentReact(
+        e,
+        ".comment-like-btn-container",
+        ".community-reaction-love",
+        "Love",
+        "pink"
+      )
+    }
+
+    if (e.target.matches("[data-reaction-care]")) {
+      commentReact(
+        e,
+        ".comment-like-btn-container",
+        ".community-reaction-care",
+        "Care",
+        "orange"
+      )
+    }
+
+    if (e.target.matches("[data-reaction-smile]")) {
+      commentReact(
+        e,
+        ".comment-like-btn-container",
+        ".community-reaction-smile",
+        "HaHa",
+        "orange"
+      )
+    }
+
+    if (e.target.matches("[data-reaction-wow]")) {
+      commentReact(
+        e,
+        ".comment-like-btn-container",
+        ".community-reaction-wow",
+        "Wow",
+        "orange"
+      )
+    }
+
+    if (e.target.matches("[data-reaction-sad]")) {
+      commentReact(
+        e,
+        ".comment-like-btn-container",
+        ".community-reaction-sad",
+        "Sad",
+        "orange"
+      )
+    }
+
+    if (e.target.matches("[data-reaction-angry]")) {
+      commentReact(
+        e,
+        ".comment-like-btn-container",
+        ".community-reaction-angry",
+        "Angry",
+        "red"
+      )
+    }
+  })
+})
+
+function commentReact(e, selectedEmojiContainer, selectedEmoji, text, color) {
+  const container = e.target.closest(".content")
+  const emojiContainer = container.querySelector(selectedEmojiContainer)
+  const emoji = container.querySelector(selectedEmoji)
+  let likeText = container.querySelector(".comment-reaction-like-text")
+  let likeCounter = container.querySelector(".comment-like-counter")
+
+  if (likeText.style.color != "") {
+    likeCounter.textContent = parseInt(likeCounter.textContent) - 1
+    likeText.style.color = ""
+    likeText.textContent = "Like"
+
+    container.querySelectorAll("[data-reaction-class]").forEach(reaction => {
+      if (!reaction.classList.contains("community-reaction-like")) {
+        reaction.classList.add("hide")
+      }
+
+      if (likeCounter.textContent == 0) {
+        emoji.classList.add("hide")
+        likeCounter.classList.add("hide")
+      }
+    })
+  } else {
+    likeText.textContent = text
+    likeText.style.color = color
+
+    emojiContainer.classList.remove("hide")
+    emoji.classList.remove("hide")
+    likeCounter.textContent = parseInt(likeCounter.textContent) + 1
+  }
+}
 
 function playAnimation(e, dataAttribute, text, color, animation) {
   const button = e.target.closest("[data-like-btn]")
