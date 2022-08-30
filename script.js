@@ -12,7 +12,6 @@ const communityReaction = document.querySelectorAll(".community-reaction")
 const likeButton = document.querySelectorAll(".reaction-like")
 const reactionLikeBtn = document.querySelector(".reaction-emoji-btn")
 const likeBtnText = document.querySelector(".like-btn-text")
-let likeCounter = parseInt(document.querySelector(".like-counter").textContent)
 const totalLikes = document.querySelector(".like-counter")
 const emojis = document.querySelectorAll(".emoji")
 const posts = document.querySelectorAll(".post")
@@ -27,6 +26,7 @@ const replyCommentTemplate = document.querySelector("#reply-comment-template")
 const repliedReplyTemplate = document.querySelector("#replied-reply-template")
 const postCommentInput = document.querySelectorAll(".post-comment")
 const commentReaction = document.querySelectorAll(".comment-reaction-like")
+let handleLikeExecute = false
 
 for (let i = 0; i < posts.length; i++) {
   posts[i].dataset.id = i
@@ -101,6 +101,12 @@ for (let i = 0; i < likeButton.length; i++) {
     ) {
       buttonText.style.color = "blue"
 
+      if (handleLikeExecute === false) {
+        handleTotalLikes(e)
+      } else {
+        decreaseTotalLikes(e)
+      }
+
       reactionBtn.removeAttribute("class")
       reactionBtn.classList.add("reacted")
       reactionBtn.classList.add("reaction-btn-like")
@@ -115,6 +121,11 @@ for (let i = 0; i < likeButton.length; i++) {
       reactionBtn.removeAttribute("class")
       reactionBtn.classList.add("reaction-emoji-btn")
       reactionBtn.classList.add("like-btn")
+      if (handleLikeExecute === false) {
+        handleTotalLikes(e)
+      } else {
+        decreaseTotalLikes(e)
+      }
     } else if (!e.target.matches("[data-reaction-emoji]")) {
       buttonText.textContent === "Like"
       buttonText.style.color = "inherit"
@@ -122,6 +133,12 @@ for (let i = 0; i < likeButton.length; i++) {
       reactionBtn.removeAttribute("class")
       reactionBtn.classList.add("reaction-emoji-btn")
       reactionBtn.classList.add("like-btn")
+      handleReaction(e, "data-reaction-like")
+      if (handleLikeExecute === false) {
+        handleTotalLikes(e)
+      } else {
+        decreaseTotalLikes(e)
+      }
     }
 
     if (buttonText.style.color === "inherit") {
@@ -137,6 +154,12 @@ for (let i = 0; i < likeButton.length; i++) {
     addAnimation(e, "data-reaction-wow", "Wow", "orange", "like-btn-wow")
     addAnimation(e, "data-reaction-sad", "Sad", "orange", "like-btn-sad")
     addAnimation(e, "data-reaction-angry", "Angry", "red", "like-btn-angry")
+
+    if (handleLikeExecute === false) {
+      handleTotalLikes(e)
+    } else {
+      decreaseTotalLikes(e)
+    }
   })
 }
 
@@ -188,6 +211,7 @@ replyButton.forEach(button => {
 })
 
 document.addEventListener("click", e => {
+  const post = e.target.closest(".post")
   if (e.target.matches(".user-comment-input")) {
     const inputArea = e.target
 
@@ -224,6 +248,9 @@ document.addEventListener("click", e => {
           inputArea.value = ""
           userInputArea.style.display = "none"
         }
+        showCommentCounter(post)
+
+        inputArea.value = ""
       }
     })
   }
@@ -359,6 +386,10 @@ function commentReact(e, selectedEmojiContainer, selectedEmoji, text, color) {
   }
 }
 
+posts.forEach(post => {
+  showCommentCounter(post)
+})
+
 function playAnimation(e, dataAttribute, text, color, animation) {
   const button = e.target.closest("[data-like-btn]")
   const reactionBtn = button.querySelector("[data-reaction]")
@@ -378,6 +409,124 @@ function playAnimation(e, dataAttribute, text, color, animation) {
 
 function addAnimation(e, dataAttribute, text, color, animation) {
   if (e.target.hasAttribute(dataAttribute)) {
+    handleReaction(e, dataAttribute)
     playAnimation(e, dataAttribute, text, color, animation)
   }
+}
+
+function handleReaction(e, dataAttribute) {
+  const postContainer = e.target.closest(".post-container")
+  const reactionsContainer = postContainer.querySelector(".reactions")
+
+  switch (dataAttribute) {
+    case "data-reaction-like":
+      removeReactions(postContainer)
+      showReaction(
+        postContainer,
+        reactionsContainer,
+        ".community-reaction-like"
+      )
+      break
+
+    case "data-reaction-love":
+      removeReactions(postContainer)
+      showReaction(
+        postContainer,
+        reactionsContainer,
+        ".community-reaction-love"
+      )
+      break
+
+    case "data-reaction-care":
+      removeReactions(postContainer)
+      showReaction(
+        postContainer,
+        reactionsContainer,
+        ".community-reaction-care"
+      )
+      break
+
+    case "data-reaction-wow":
+      removeReactions(postContainer)
+      showReaction(postContainer, reactionsContainer, ".community-reaction-wow")
+      break
+
+    case "data-reaction-smile":
+      removeReactions(postContainer)
+      showReaction(
+        postContainer,
+        reactionsContainer,
+        ".community-reaction-smile"
+      )
+      break
+
+    case "data-reaction-sad":
+      removeReactions(postContainer)
+      showReaction(postContainer, reactionsContainer, ".community-reaction-sad")
+      break
+
+    case "data-reaction-angry":
+      removeReactions(postContainer)
+      showReaction(
+        postContainer,
+        reactionsContainer,
+        ".community-reaction-angry"
+      )
+      break
+  }
+}
+
+function removeReactions(postContainer) {
+  const reactions = postContainer.querySelectorAll("[data-reaction-class]")
+  reactions.forEach(reaction => {
+    if (!reaction.classList.contains("community-reaction-like")) {
+      reaction.classList.add("hide")
+    }
+  })
+}
+
+function showReaction(postContainer, reactionsContainer, className) {
+  reactionsContainer.querySelector(className).classList.remove("hide")
+}
+
+function showCommentCounter(post) {
+  const commentsContainer = post.querySelector(".replies-container")
+  const totalComments = commentsContainer.querySelectorAll(".reply")
+  const commentCounter = post.querySelector(".comments")
+
+  if (totalComments.length < 1) {
+    commentCounter.classList.add("hide")
+  }
+
+  if (totalComments.length === 1) {
+    commentCounter.classList.remove("hide")
+    commentCounter.textContent = "1 comment"
+  }
+
+  if (totalComments.length > 1) {
+    commentCounter.classList.remove("hide")
+    commentCounter.textContent = `${totalComments.length} comments`
+  }
+}
+
+function handleTotalLikes(e) {
+  const container = e.target.closest(".post")
+  const likeCounter = container.querySelector(".like-counter")
+  const number = parseInt(likeCounter.textContent)
+
+  likeCounter.textContent = number + 1
+
+  handleLikeExecute = true
+}
+
+function decreaseTotalLikes(e) {
+  const container = e.target.closest(".post")
+  const likeCounter = container.querySelector(".like-counter")
+  const number = parseInt(likeCounter.textContent)
+
+  if (e.target.matches("[data-reaction-emoji]")) return
+
+  likeCounter.textContent = number - 1
+
+  handleLikeExecute = false
 }
