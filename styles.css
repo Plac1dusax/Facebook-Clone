@@ -435,22 +435,112 @@ body {
   min-width: calc(100% - 720px);
 }
 
-.story-section {
-  width: calc(5 * 118px);
+.story-section-container {
+  background-color: white;
   margin: auto;
+  max-width: calc(5 * 118px);
+  height: 270px;
+  border: 1px solid hsla(200, 10%, 60%, 0.3);
+  border-top-left-radius: 0.8em;
+  border-top-right-radius: 0.8em;
+  border-bottom-left-radius: 0.8em;
+  border-bottom-right-radius: 0.8em;
+  overflow: hidden;
+}
+
+.section-names {
+  margin: auto;
+  width: calc(5 * 118px);
+  padding: 0.2rem 0.2rem;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  border-bottom: 1px solid hsla(200, 10%, 60%, 0.5);
+  background-color: white;
+
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #65676b;
+}
+
+.section-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  padding: 1rem;
+  width: 100%;
+}
+
+.section-name:hover {
+  background-color: hsla(0, 3%, 71%, 0.125);
+  border-radius: 0.3em;
+}
+
+.selected {
+  color: #216fdb;
+  border-bottom: 3px solid #216fdb;
+  border-radius: 0.2em;
+}
+
+.selected:hover {
+  background-color: transparent;
+}
+
+.story-section,
+.reels-section,
+.rooms-section {
+  min-width: calc(5 * 118px);
+  max-width: 500px;
+  margin: auto;
+  margin-top: 0.5rem;
   position: relative;
+  padding: 0.2rem 0;
+  padding-left: 0.5rem;
 
   display: flex;
   justify-content: space-between;
 }
 
-.story {
+.story,
+.reel {
   position: relative;
   width: 110px;
   height: 190px;
   background-color: white;
-  overflow: hidden;
   cursor: pointer;
+
+  margin-right: 7.5rem;
+}
+
+.total-watch {
+  position: absolute;
+  bottom: 5%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.total-watch-logo img {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+.total-watch-count {
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.story-personal {
+  border: 1px solid hsla(200, 10%, 60%, 0.7);
+  border-radius: 0.3em;
+  box-shadow: 0 0 5px 0 hsla(200, 10%, 60%, 0.7);
 }
 
 .profile-picture {
@@ -466,7 +556,8 @@ body {
 }
 
 .story-image,
-.personal-image {
+.personal-image,
+.reel-image {
   width: 110px;
   height: 190px;
   overflow: hidden;
@@ -476,6 +567,29 @@ body {
   border-radius: 0.3em;
 
   transition: 0.5s all ease-in-out;
+}
+
+.person-room img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.person-room-img-container {
+  position: relative;
+}
+
+.person-room-img-container::after {
+  content: "";
+  position: absolute;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  bottom: 15%;
+  right: 0%;
+  background-color: green;
+  border: 1px solid white;
 }
 
 .user-name {
@@ -541,20 +655,123 @@ body {
   background-color: hsla(0, 0%, 86%, 0.225);
 }
 
-.next-btn {
+.rooms-section {
+  height: 200px;
+}
+
+.room {
+  width: 160px;
+  height: 100%;
+
+  padding: 0.2rem 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid hsla(0, 3%, 71%, 0.825);
+  border-radius: 0.3em;
+  white-space: nowrap;
+  margin-right: 0.5rem;
+}
+
+.info {
+  justify-self: flex-start;
+  align-self: flex-end;
+}
+
+.info-emblem svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.create-room-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2px;
+
+  padding: 0.3rem;
+  border: 1px solid hsla(0, 3%, 71%, 0.225);
+  border-radius: 50%;
+}
+
+.create-room-logo {
+  background-image: url(./images/rooms/8m8W6qk28Db.png);
+  background-position-x: -1.3%;
+  background-position-y: 101%;
+  background-repeat: no-repeat;
+  width: 48px;
+  height: 48px;
+}
+
+.room-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 0.5rem;
+}
+
+.friend-profile-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.room-name-text {
+  font-weight: bold;
+  font-size: 0.91rem;
+}
+
+.get-started-text {
+  font-weight: normal;
+  font-size: 0.85rem;
+  color: hsla(0, 3%, 51%, 0.825);
+}
+
+.btn-say-hi {
+  margin-bottom: 0.7rem;
+}
+
+.btn-say-hi button {
+  outline-style: none;
+  border: 1px solid hsla(200, 20%, 50%, 0.5);
+  box-shadow: 0 0 0 1px hsla(200, 50%, 70%, 0.4);
+  padding: 0.5rem 3rem;
+  border-radius: 0.3em;
+  background-color: transparent;
+  color: #1b74e4;
+  font-weight: bold;
+}
+
+.slide-btn {
   position: absolute;
   color: #555;
   font-weight: 500;
-  right: -3%;
   background-color: white;
   box-shadow: 0 0 3px #888;
-  padding: 0.7rem;
+  padding: 0.9rem;
   border-radius: 50%;
   top: 40%;
+  z-index: 10;
 }
 
-.next-btn:hover {
+.next-btn {
+  right: 7%;
+}
+
+.previous-btn {
+  left: 7%;
+  transform: rotate(180deg);
+}
+
+.slide-btn:hover {
   background-color: #eee;
+  cursor: pointer;
 }
 
 .on-your-mind-section {

@@ -26,6 +26,7 @@ const replyCommentTemplate = document.querySelector("#reply-comment-template")
 const repliedReplyTemplate = document.querySelector("#replied-reply-template")
 const postCommentInput = document.querySelectorAll(".post-comment")
 const commentReaction = document.querySelectorAll(".comment-reaction-like")
+const storySectionNames = document.querySelectorAll(".section-name")
 let handleLikeExecute = false
 
 for (let i = 0; i < posts.length; i++) {
@@ -389,6 +390,45 @@ function commentReact(e, selectedEmojiContainer, selectedEmoji, text, color) {
 posts.forEach(post => {
   showCommentCounter(post)
 })
+
+storySectionNames.forEach(section => {
+  section.addEventListener("click", e => {
+    if (e.target.textContent === "Stories") {
+      handleStorySection(e, "story-section")
+    }
+
+    if (e.target.textContent === "Reels") {
+      handleStorySection(e, "reels-section")
+    }
+
+    if (e.target.textContent === "Rooms") {
+      handleStorySection(e, "rooms-section")
+    }
+  })
+})
+
+function handleStorySection(e, section) {
+  e.target.classList.add("selected")
+  const container = e.target.closest(".story-section-container")
+  const wrapper = container.querySelectorAll(".stories-reels-rooms")
+  const sectionNames = container.querySelectorAll(".section-name")
+
+  for (let i = 0; i < wrapper.length; i++) {
+    if (wrapper[i].classList.contains(section)) {
+      wrapper[i].classList.remove("hide")
+    } else {
+      wrapper[i].classList.add("hide")
+    }
+  }
+
+  sectionNames.forEach(name => {
+    if (name.textContent !== e.target.textContent) {
+      name.classList.remove("selected")
+    } else {
+      name.classList.add("selected")
+    }
+  })
+}
 
 function playAnimation(e, dataAttribute, text, color, animation) {
   const button = e.target.closest("[data-like-btn]")

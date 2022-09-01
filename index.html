@@ -380,56 +380,261 @@
 
 
       <section class="section main-feed-section">
-        <div class="story-section">
-          <div class="story story-personal">
-            <img class="personal-image " src="./images/profile-picture/avatar_hu8d30e29128cae2b0d49276543cea6665_24055_250x250_fill_q90_lanczos_center.jpg">
-            <div class="add-story-svg-container">
-              <svg class="add-story-btn" fill="currentColor" viewBox="0 0 20 20" width="1em" height="1em" class="a8c37x1j ms05siws l3qrxjdp b7h9ocf4 ljqsnud1 jnigpg78 odw8uiq3">
-                <g fill-rule="nonzero">
-                <path d="M3.5 11h13a1 1 0 1 0 0-2h-13a1 1 0 1 0 0 2z"/>
-                <path d="M11 16.5v-13a1 1 0 1 0-2 0v13a1 1 0 1 0 2 0z"/>
-                </g>
-                </svg>
-            </div>
-            </div>
-            <div class="story">
-              <img class="story-image" src="./images/stories/austin-ramsey-IoiWSIKgkMU-unsplash.jpg">
-              <img class="profile-picture" src="./images/profile-picture/photo-1506794778202-cad84cf45f1d.jpg">
-              <div class="user-name">Random User</div>
+        <div class="story-section-container">
+          <div class="section-names">
+            <div class="section-name selected">Stories</div>
+            <div class="section-name" >Reels</div>
+            <div class="section-name" >Rooms</div>
+          </div>
+          <div class="story-section stories-reels-rooms ">
+            <div class="story story-personal">
+              <img class="personal-image " src="./images/profile-picture/avatar_hu8d30e29128cae2b0d49276543cea6665_24055_250x250_fill_q90_lanczos_center.jpg">
+              <div class="add-story-svg-container">
+                <svg class="add-story-btn" fill="currentColor" viewBox="0 0 20 20" width="1em" height="1em" class="a8c37x1j ms05siws l3qrxjdp b7h9ocf4 ljqsnud1 jnigpg78 odw8uiq3">
+                  <g fill-rule="nonzero">
+                  <path d="M3.5 11h13a1 1 0 1 0 0-2h-13a1 1 0 1 0 0 2z"/>
+                  <path d="M11 16.5v-13a1 1 0 1 0-2 0v13a1 1 0 1 0 2 0z"/>
+                  </g>
+                  </svg>
+              </div>
               </div>
               <div class="story">
-                <img class="story-image" src="./images/stories/bailey-burton-QddoA8mBzw4-unsplash.jpg">
-                <img class="profile-picture" src="./images/profile-picture/photo-1500648767791-00dcc994a43e.jpg">
+                <img class="story-image" src="./images/stories/austin-ramsey-IoiWSIKgkMU-unsplash.jpg">
+                <img class="profile-picture" src="./images/profile-picture/photo-1506794778202-cad84cf45f1d.jpg">
                 <div class="user-name">Random User</div>
                 </div>
                 <div class="story">
-                  <img class="story-image" src="./images/stories/pedro-miranda-vaP-tUfIXFU-unsplash.jpg">
-                  <img class="profile-picture" src="./images/profile-picture/photo-1491349174775-aaafddd81942.jpg">
+                  <img class="story-image" src="./images/stories/bailey-burton-QddoA8mBzw4-unsplash.jpg">
+                  <img class="profile-picture" src="./images/profile-picture/photo-1500648767791-00dcc994a43e.jpg">
                   <div class="user-name">Random User</div>
                   </div>
                   <div class="story">
-                    <img class="story-image" src="./images/stories/tobias-reich-lfCZvGXfG9g-unsplash.jpg">
-                    <img class="profile-picture" src="./images/profile-picture/avatar_hu8d30e29128cae2b0d49276543cea6665_24055_250x250_fill_q90_lanczos_center.jpg">
+                    <img class="story-image" src="./images/stories/pedro-miranda-vaP-tUfIXFU-unsplash.jpg">
+                    <img class="profile-picture" src="./images/profile-picture/photo-1491349174775-aaafddd81942.jpg">
                     <div class="user-name">Random User</div>
                     </div>
-                    <div class="next-btn">
-                      <svg fill="currentColor" viewBox="0 0 20 20" width="1em" height="1em" class="a8c37x1j ms05siws l3qrxjdp b7h9ocf4 py1f6qlh jnigpg78 odw8uiq3">
-                        <g fill-rule="nonzero">
-                        <path d="M10.751 14.501a1.0005561 1.0005561 0 0 0 1.415 1.415l5.208-5.209a1 1 0 0 0 0-1.414l-5.208-5.209A1.0012632 1.0012632 0 0 0 10.75 5.5l4.501 4.501-4.5 4.501z"/>
-                        <path d="M3.334 11h12.812a1 1 0 1 0 0-2H3.333a1 1 0 1 0 0 2z"/>
-                        </g>
-                        </svg>
+                    <div class="story">
+                      <img class="story-image" src="./images/stories/tobias-reich-lfCZvGXfG9g-unsplash.jpg">
+                      <img class="profile-picture" src="./images/profile-picture/avatar_hu8d30e29128cae2b0d49276543cea6665_24055_250x250_fill_q90_lanczos_center.jpg">
+                      <div class="user-name">Random User</div>
+                      </div>
+                      <div class="next-btn slide-btn">
+                        <svg fill="currentColor" viewBox="0 0 20 20" width="1em" height="1em" class="b6ax4al1 m4pnbp5e somyomsx ahndzqod gnhxmgs4 mwtcrujb mx6bq00g">
+                          <path d="M7.8 4.53 13.273 10 7.8 15.47a.75.75 0 0 0 1.061 1.06l6-6a.751.751 0 0 0 0-1.06l-6-6A.75.75 0 0 0 7.8 4.53z"/>
+                          </svg>
+                      </div>
+                      <div class="previous-btn slide-btn hide">
+                        <svg fill="currentColor" viewBox="0 0 20 20" width="1em" height="1em" class="b6ax4al1 m4pnbp5e somyomsx ahndzqod gnhxmgs4 mwtcrujb mx6bq00g">
+                          <path d="M7.8 4.53 13.273 10 7.8 15.47a.75.75 0 0 0 1.061 1.06l6-6a.751.751 0 0 0 0-1.06l-6-6A.75.75 0 0 0 7.8 4.53z"/>
+                          </svg>
+                      </div>
+          </div>
+                    <div class="reels-section stories-reels-rooms hide">
+                      <div class="reel">
+                        <img class="reel-image" src="./images/reels/T7VRYMJJAVONFEIYOW43M67HJ4.jpg">
+                        <div class="total-watch">
+                          <div class="total-watch-logo">
+                            <img src="./images/reels/icons8-play-24.png">
+                          </div>
+                          <div class="total-watch-count">1.2M</div>
+                        </div>
+                        </div>
+                        <div class="reel">
+                          <img class="reel-image" src="./images/reels/P-51_Mustang_edit1.jpg">
+                             <div class="total-watch">
+                          <div class="total-watch-logo">
+                            <img src="./images/reels/icons8-play-24.png">
+                          </div>
+                          <div class="total-watch-count">1.2M</div>
+                        </div>
+                          </div>
+                          <div class="reel">
+                            <img class="reel-image" src="./images/reels/Morning_Blue_Ocean_Coast-HDR_Photo_HD_Wallpapers_medium.jpg">
+                               <div class="total-watch">
+                          <div class="total-watch-logo">
+                            <img src="./images/reels/icons8-play-24.png">
+                          </div>
+                          <div class="total-watch-count">1.2M</div>
+                        </div>
+                            </div>
+                            <div class="reel">
+                              <img class="reel-image" src="./images/reels/Amazing_Sunset_Reflected_Clear_Lakes-HDR_Photo_HD_Wallpaper_medium.jpg">
+                                 <div class="total-watch">
+                          <div class="total-watch-logo">
+                            <img src="./images/reels/icons8-play-24.png">
+                          </div>
+                          <div class="total-watch-count">1.2M</div>
+                        </div>
+                              </div>
+                              <div class="reel">
+                                <img class="reel-image" src="./images/reels/Yehliu_promontory-HDR_Photo_HD_Wallpaper_medium.jpg">
+                                   <div class="total-watch">
+                          <div class="total-watch-logo">
+                            <img src="./images/reels/icons8-play-24.png">
+                          </div>
+                          <div class="total-watch-count">1.2M</div>
+                        </div>
+                                </div>
+                                <div class="reel">
+                                  <img class="reel-image" src="./images/reels/18976677638_a2dfbcb560.jpg">
+                                     <div class="total-watch">
+                          <div class="total-watch-logo">
+                            <img src="./images/reels/icons8-play-24.png">
+                          </div>
+                          <div class="total-watch-count">1.2M</div>
+                        </div>
+                                  </div>
+                                  <div class="reel">
+                                    <img class="reel-image" src="./images/reels/Yehliu_promontory-HDR_Photo_HD_Wallpaper_medium.jpg">
+                                       <div class="total-watch">
+                          <div class="total-watch-logo">
+                            <img src="./images/reels/icons8-play-24.png">
+                          </div>
+                          <div class="total-watch-count">1.2M</div>
+                        </div>
+                                    </div>
+                                    <div class="reel">
+                                      <img class="reel-image" src="./images/reels/18976677638_a2dfbcb560.jpg">
+                                         <div class="total-watch">
+                          <div class="total-watch-logo">
+                            <img src="./images/reels/icons8-play-24.png">
+                          </div>
+                          <div class="total-watch-count">1.2M</div>
+                        </div>
+                                      </div>
+                                      <div class="reel">
+                                        <img class="reel-image" src="./images/reels/images.jpg">
+                                           <div class="total-watch">
+                          <div class="total-watch-logo">
+                            <img src="./images/reels/icons8-play-24.png">
+                          </div>
+                          <div class="total-watch-count">1.2M</div>
+                        </div>
+                                        </div>
+                                        <div class="reel">
+                                          <img class="reel-image" src="./images/reels/b228266ed9186036cde57de9b88032ce.jpg">
+                                             <div class="total-watch">
+                          <div class="total-watch-logo">
+                            <img src="./images/reels/icons8-play-24.png">
+                          </div>
+                          <div class="total-watch-count">1.2M</div>
+                        </div>
+                                          </div>
+                                          <div class="next-btn slide-btn">
+                                            <svg fill="currentColor" viewBox="0 0 20 20" width="1em" height="1em" class="b6ax4al1 m4pnbp5e somyomsx ahndzqod gnhxmgs4 mwtcrujb mx6bq00g">
+                                              <path d="M7.8 4.53 13.273 10 7.8 15.47a.75.75 0 0 0 1.061 1.06l6-6a.751.751 0 0 0 0-1.06l-6-6A.75.75 0 0 0 7.8 4.53z"/>
+                                              </svg>
+                                          </div>
+                                          <div class="previous-btn slide-btn hide">
+                                            <svg fill="currentColor" viewBox="0 0 20 20" width="1em" height="1em" class="b6ax4al1 m4pnbp5e somyomsx ahndzqod gnhxmgs4 mwtcrujb mx6bq00g">
+                                              <path d="M7.8 4.53 13.273 10 7.8 15.47a.75.75 0 0 0 1.061 1.06l6-6a.751.751 0 0 0 0-1.06l-6-6A.75.75 0 0 0 7.8 4.53z"/>
+                                              </svg>
+                                          </div>
                     </div>
 
-                    <div class="previous-btn hide">
-                      <svg fill="currentColor" viewBox="0 0 20 20" width="1em" height="1em" class="a8c37x1j ms05siws l3qrxjdp b7h9ocf4 py1f6qlh jnigpg78 odw8uiq3">
-                        <g fill-rule="nonzero">
-                        <path d="M10.751 14.501a1.0005561 1.0005561 0 0 0 1.415 1.415l5.208-5.209a1 1 0 0 0 0-1.414l-5.208-5.209A1.0012632 1.0012632 0 0 0 10.75 5.5l4.501 4.501-4.5 4.501z"/>
-                        <path d="M3.334 11h12.812a1 1 0 1 0 0-2H3.333a1 1 0 1 0 0 2z"/>
-                        </g>
-                        </svg>
+                    <div class="rooms-section stories-reels-rooms hide">
+                      <div class="room personal-room-create">
+                        <div class="info">
+                          <div class="info-emblem">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="26" height="26"
+viewBox="0 0 226 226"
+style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,226v-226h226v226z" fill="none"></path><g fill="#cccccc"><path d="M113,10.32212c-56.70372,0 -102.67788,45.97416 -102.67788,102.67788c0,56.70373 45.97416,102.67788 102.67788,102.67788c56.70373,0 102.67788,-45.97415 102.67788,-102.67788c0,-56.70372 -45.97415,-102.67788 -102.67788,-102.67788zM134.39123,169.46605c-5.29687,2.07121 -9.50721,3.66707 -12.66497,4.75361c-3.15775,1.08654 -6.79087,1.62981 -10.96724,1.62981c-6.38341,0 -11.3747,-1.5619 -14.9399,-4.6857c-3.53125,-3.08984 -5.29687,-7.0625 -5.29687,-11.88401c0,-1.86749 0.13582,-3.76893 0.40745,-5.70433c0.23767,-1.96936 0.67909,-4.14243 1.25631,-6.6211l6.6211,-23.36058c0.57722,-2.24098 1.08654,-4.34615 1.49399,-6.34946c0.40745,-2.0033 0.57722,-3.83684 0.57722,-5.5006c0,-2.95403 -0.61118,-5.05919 -1.83354,-6.21364c-1.25631,-1.1884 -3.59915,-1.76562 -7.0625,-1.76562c-1.69771,0 -3.46334,0.27163 -5.26291,0.78095c-1.79959,0.54327 -3.32753,1.05259 -4.61779,1.52794l1.76563,-7.19832c4.31219,-1.76562 8.45463,-3.25962 12.42728,-4.51592c3.9387,-1.25631 7.70763,-1.90144 11.20493,-1.90144c6.34945,0 11.27284,1.56189 14.70222,4.61779c3.42938,3.05589 5.16106,7.0625 5.16106,11.95192c0,1.01863 -0.10187,2.81821 -0.33955,5.36478c-0.23767,2.54658 -0.67909,4.88942 -1.32421,7.0625l-6.58714,23.29267c-0.54327,1.86749 -1.01863,4.00661 -1.46004,6.38341c-0.40745,2.3768 -0.61117,4.21034 -0.61117,5.43269c0,3.08985 0.67909,5.22896 2.07121,6.34946c1.35817,1.12049 3.76893,1.66376 7.19832,1.66376c1.59586,0 3.39543,-0.27163 5.43269,-0.8149c2.00331,-0.57722 3.46335,-1.05259 4.38011,-1.49399zM133.20283,74.90325c-3.05589,2.85216 -6.75691,4.27824 -11.06911,4.27824c-4.31219,0 -8.04717,-1.42608 -11.13702,-4.27824c-3.08984,-2.85216 -4.61779,-6.31551 -4.61779,-10.35608c0,-4.04056 1.5619,-7.53786"
+  </g>
+  </g>
+  
+                          </div>
+                        </div>
+                        <div class="create-room-logo-container">
+                          <div class="create-room-logo"></div>
+                        </div>
+                        <div class="room-name">
+                          <div class="room-name-text">Furkan's room</div>
+                          <div class="get-started-text">Get started</div>
+                        </div>
+
+                        <div class="btn-say-hi">
+                          <button>Create</button>
+                        </div>
+                      </div>
+                          <div class="room ">
+                        <div class="friend-profile-container person-room">
+                          <div class="person-room-img-container">
+                            <img src="./images/profile-picture/photo-1500648767791-00dcc994a43e.jpg" >
+                          </div>
+                            <div class="room-name">
+                              <div class="room-name-text">Random User</div>
+                            </div>
+                          </div>
+                        <div class="btn-say-hi">
+                          <button>Create</button>
+                        </div>
+                      </div>
+                      <div class="room ">
+                        <div class="friend-profile-container person-room">
+                          <div class="person-room-img-container">
+                            <img  src="./images/profile-picture/photo-1506794778202-cad84cf45f1d.jpg">
+                          </div>
+                          <div class="room-name ">
+                            <div class="room-name-text">Random User</div>
+                          </div>
+                        </div>
+                        <div class="btn-say-hi">
+                          <button>Say Hi</button>
+                        </div>
+                      </div>
+                      <div class="room ">
+                        <div class="friend-profile-container person-room">
+                          <div class="person-room-img-container">
+                            <img src="./images/profile-picture/photo-1491349174775-aaafddd81942.jpg">
+                          </div>
+                          <div class="room-name">
+                            <div class="room-name-text">Random User</div>
+                          </div>
+                        </div>
+                        <div class="btn-say-hi">
+                          <button>Say Hi</button>
+                        </div>
+                      </div>
+                      <div class="room ">
+                        <div class="friend-profile-container person-room">
+                          <div class="person-room-img-container">
+                          <img src="./images/profile-picture/depositphotos_24980077-stock-photo-portrait-of-a-normal-man.jpg" >
+                        </div>
+                          <div class="room-name">
+                            <div class="room-name-text">Random User</div>
+                          </div>
+                        </div>
+                        <div class="btn-say-hi">
+                          <button>Say Hi</button>
+                        </div>
+                      </div>
+                      <div class="room ">
+                        <div class="friend-profile-container person-room">
+                          <div class="person-room-img-container">
+                            <img src="./images/profile-picture/D8dDZukXUAAXLdY.jpg">
+                          </div>
+                          <div class="room-name">
+                            <div class="room-name-text">Random User</div>
+                          </div>
+                        </div>
+                        <div class="btn-say-hi">
+                          <button>Say Hi</button>
+                        </div>
+                      </div>
+                      <div class="next-btn slide-btn">
+                        <svg fill="currentColor" viewBox="0 0 20 20" width="1em" height="1em" class="b6ax4al1 m4pnbp5e somyomsx ahndzqod gnhxmgs4 mwtcrujb mx6bq00g">
+                          <path d="M7.8 4.53 13.273 10 7.8 15.47a.75.75 0 0 0 1.061 1.06l6-6a.751.751 0 0 0 0-1.06l-6-6A.75.75 0 0 0 7.8 4.53z"/>
+                          </svg>
+                      </div>
+                      <div class="previous-btn slide-btn hide">
+                        <svg fill="currentColor" viewBox="0 0 20 20" width="1em" height="1em" class="b6ax4al1 m4pnbp5e somyomsx ahndzqod gnhxmgs4 mwtcrujb mx6bq00g">
+                          <path d="M7.8 4.53 13.273 10 7.8 15.47a.75.75 0 0 0 1.061 1.06l6-6a.751.751 0 0 0 0-1.06l-6-6A.75.75 0 0 0 7.8 4.53z"/>
+                          </svg>
+                      </div>
                     </div>
         </div>
+      
         <div class="on-your-mind-section">
           <header class="personal-share-header">
             <img class="profile-photo" src="./images/profile-picture/avatar_hu8d30e29128cae2b0d49276543cea6665_24055_250x250_fill_q90_lanczos_center.jpg" alt="">
