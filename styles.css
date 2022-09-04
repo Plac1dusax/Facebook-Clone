@@ -446,6 +446,7 @@ body {
   border-bottom-left-radius: 0.8em;
   border-bottom-right-radius: 0.8em;
   overflow: hidden;
+  position: relative;
 }
 
 .section-names {
@@ -498,7 +499,6 @@ body {
   max-width: 500px;
   margin: auto;
   margin-top: 0.5rem;
-  position: relative;
   padding: 0.2rem 0;
   padding-left: 0.5rem;
 
@@ -515,6 +515,44 @@ body {
   cursor: pointer;
 
   margin-right: 7.5rem;
+}
+
+.see-more-reels-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 110px;
+  min-height: 190px;
+  border: 1px solid #ddd;
+  border-radius: 0.3em;
+}
+
+.see-more-reels-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  background-color: #ddd;
+  border-radius: 50%;
+  padding: 1.5rem;
+}
+
+.see-more-reels-logo {
+  background-image: url(./images/reels/_MZsKrybMEI.png);
+  background-repeat: no-repeat;
+  background-position-y: 80%;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 1rem;
+}
+
+.see-more-reels {
+  font-weight: bold;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 0.4rem;
 }
 
 .total-watch {
@@ -535,12 +573,6 @@ body {
   color: white;
   font-weight: bold;
   font-size: 0.9rem;
-}
-
-.story-personal {
-  border: 1px solid hsla(200, 10%, 60%, 0.7);
-  border-radius: 0.3em;
-  box-shadow: 0 0 5px 0 hsla(200, 10%, 60%, 0.7);
 }
 
 .profile-picture {
@@ -756,7 +788,7 @@ body {
   box-shadow: 0 0 3px #888;
   padding: 0.9rem;
   border-radius: 50%;
-  top: 40%;
+  top: 55%;
   z-index: 10;
 }
 

@@ -27,7 +27,16 @@ const repliedReplyTemplate = document.querySelector("#replied-reply-template")
 const postCommentInput = document.querySelectorAll(".post-comment")
 const commentReaction = document.querySelectorAll(".comment-reaction-like")
 const storySectionNames = document.querySelectorAll(".section-name")
+const slideNextButton = document.querySelector(".next-btn")
+const slidePreviousButton = document.querySelector(".previous-btn")
+const storySection = document.querySelector(".story-section")
+const reelsSection = document.querySelector(".reels-section")
+const roomsSection = document.querySelector(".rooms-section")
 let handleLikeExecute = false
+let maxSectionWidth
+let storySectionIndex = 0
+let remainingSpace = maxSectionWidth - storySection.offsetWidth
+let amount = remainingSpace / 3
 
 for (let i = 0; i < posts.length; i++) {
   posts[i].dataset.id = i
@@ -395,23 +404,90 @@ storySectionNames.forEach(section => {
   section.addEventListener("click", e => {
     if (e.target.textContent === "Stories") {
       handleStorySection(e, "story-section")
+      storySectionIndex = 0
     }
 
     if (e.target.textContent === "Reels") {
       handleStorySection(e, "reels-section")
+      storySectionIndex = 0
     }
 
     if (e.target.textContent === "Rooms") {
       handleStorySection(e, "rooms-section")
+      storySectionIndex = 0
     }
   })
 })
+
+slideNextButton.addEventListener("click", e => {
+  handleSlideForwards(e)
+})
+
+slidePreviousButton.addEventListener("click", e => {
+  handleSlideBackwards(e)
+})
+
+function handleSlideForwards(e) {
+  const container = e.target.closest(".story-section-container")
+  const sections = container.querySelectorAll(".stories-reels-rooms")
+  let wrapper
+  sections.forEach(section => {
+    if (!section.classList.contains("hide")) {
+      wrapper = section
+      maxSectionWidth = section.scrollWidth
+      remainingSpace = maxSectionWidth - section.offsetWidth
+      amount = remainingSpace / 3
+    }
+  })
+  storySectionIndex += amount
+
+  slidePreviousButton.classList.remove("hide")
+
+  if (Math.round(storySectionIndex) > Math.round(remainingSpace)) {
+    slideNextButton.classList.add("hide")
+  }
+  wrapper.style.transition = "all 0.3s"
+  wrapper.style.transform = "translateX(-" + storySectionIndex + "px)"
+}
+
+function handleSlideBackwards(e) {
+  const container = e.target.closest(".story-section-container")
+  const sections = container.querySelectorAll(".stories-reels-rooms")
+  let wrapper
+  sections.forEach(section => {
+    if (!section.classList.contains("hide")) {
+      wrapper = section
+      maxSectionWidth = section.scrollWidth
+      remainingSpace = maxSectionWidth - section.offsetWidth
+      amount = remainingSpace / 3
+    }
+  })
+
+  wrapper.style.transition = "all 0.3s"
+
+  storySectionIndex = storySectionIndex - amount
+
+  if (Math.round(storySectionIndex) === 0) {
+    wrapper.style.transform = ""
+    slidePreviousButton.classList.add("hide")
+    slideNextButton.classList.remove("hide")
+  }
+
+  wrapper.style.transform = "translateX(-" + storySectionIndex + "px)"
+}
 
 function handleStorySection(e, section) {
   e.target.classList.add("selected")
   const container = e.target.closest(".story-section-container")
   const wrapper = container.querySelectorAll(".stories-reels-rooms")
   const sectionNames = container.querySelectorAll(".section-name")
+
+  wrapper.forEach(wrapper => {
+    wrapper.style.transform = "translateX(0px)"
+  })
+
+  slideNextButton.classList.remove("hide")
+  slidePreviousButton.classList.add("hide")
 
   for (let i = 0; i < wrapper.length; i++) {
     if (wrapper[i].classList.contains(section)) {
