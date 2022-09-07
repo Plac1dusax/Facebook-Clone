@@ -1234,10 +1234,13 @@ body {
   background-position-y: 38.3%;
 }
 
-.send-btn svg {
+.share-btn {
+  background-image: url(./images/reactions/kUVRLWRtG-0.png);
+  background-size: 2rem;
+  background-repeat: no-repeat;
   width: 1.5rem;
   height: 1.5rem;
-  background-position-y: 10%;
+  background-position-y: 46%;
 }
 
 .user-profile-photo {
@@ -1380,6 +1383,7 @@ body {
 }
 
 .content {
+  min-width: 150px;
   flex-direction: column;
   padding: 0.5rem;
   border-radius: 0.6em;
@@ -1406,7 +1410,11 @@ body {
 
 .comment-reaction {
   margin-right: 0.6rem;
+}
+
+.comment-reaction:hover {
   cursor: pointer;
+  text-decoration: underline;
 }
 
 .comment-profile-picture img {

@@ -270,7 +270,7 @@ function commentReact(e, selectedEmojiContainer, selectedEmoji, text, color) {
   let likeText = container.querySelector(".comment-reaction-like-text")
   let likeCounter = container.querySelector(".comment-like-counter")
 
-  if (likeText.style.color != "" && likeText.textContent === "Like") {
+  if (likeText.style.color != "") {
     likeCounter.textContent = parseInt(likeCounter.textContent) - 1
     likeText.style.color = ""
     likeText.textContent = "Like"
