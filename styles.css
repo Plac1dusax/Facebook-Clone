@@ -678,7 +678,8 @@ body {
 }
 
 .story-image:hover,
-.personal-image:hover {
+.personal-image:hover,
+.reel-image:hover {
   transform: scale(1.1);
   filter: grayscale(40%);
 }
@@ -705,6 +706,11 @@ body {
   border-radius: 0.3em;
   white-space: nowrap;
   margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.room:hover {
+  background-color: hsla(0, 3%, 71%, 0.325);
 }
 
 .info {
@@ -778,6 +784,7 @@ body {
   background-color: transparent;
   color: #1b74e4;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .slide-btn {
@@ -853,7 +860,6 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  padding: 1rem;
   font-size: 1rem;
   font-weight: 500;
   color: #999;
@@ -863,6 +869,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 0.3em;
+}
+
+.icon:hover {
+  background-color: hsla(0, 3%, 71%, 0.325);
 }
 
 .icon svg {
