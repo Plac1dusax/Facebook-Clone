@@ -284,6 +284,7 @@ function commentReact(e, selectedEmojiContainer, selectedEmoji, text, color) {
       if (likeCounter.textContent == 0) {
         emoji.classList.add("hide")
         likeCounter.classList.add("hide")
+        reaction.classList.add("hide")
       }
     })
   } else if (container.classList.contains("reacted")) {
@@ -595,12 +596,6 @@ function handleCommentReaction(react) {
   })
 
   react.addEventListener("click", e => {
-    reactions.forEach(reaction => {
-      reaction.addEventListener("click", e => {
-        reaction.classList.add("hide")
-      })
-    })
-
     if (e.target.matches(".comment-reaction-like-text")) {
       commentReact(
         e,
