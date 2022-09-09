@@ -20,37 +20,42 @@ body {
   font-display: swap;
 }
 
+.navbar,
+.main-feed,
+.personal-shortcut-text,
+.contacts-header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .navbar {
   position: fixed;
   padding: 0.5rem;
-  display: flex;
-  justify-content: space-between;
   min-width: 100vw;
   height: 60px;
   background-color: white;
   font-size: 12px;
   border-bottom: 1px solid #ddd;
   box-shadow: 0 0 5px 0 #ddd;
-  z-index: 5;
+  z-index: 50;
+}
+
+.more {
+  display: none;
+}
+
+.more-btn-selected {
+  border-bottom: 3px solid #216fdb;
 }
 
 .facebook-logo:hover {
   cursor: pointer;
 }
 
-.search-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .search-section input {
   background: url(./images/navbar/search-icon.svg) no-repeat;
   background-position: left 5% center;
   background-size: 10px;
-}
-
-.search-section input {
   outline: none;
   border: none;
   resize: none;
@@ -63,16 +68,10 @@ body {
 }
 
 .navigation-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 500px;
 }
 
 .nav-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: #888;
   cursor: pointer;
   min-width: 100px;
@@ -87,12 +86,6 @@ body {
 .home {
   color: #1b74e4;
   border-bottom: 3px solid #1b74e4;
-}
-
-.account-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .acc {
@@ -136,8 +129,6 @@ body {
 }
 
 .main-feed {
-  display: flex;
-  justify-content: space-between;
   min-width: 100vw;
   min-height: 100vh;
 }
@@ -227,8 +218,6 @@ body {
 }
 
 .personal-shortcut-text {
-  display: flex;
-  justify-content: space-between;
   margin-top: 0.3rem;
 }
 
@@ -278,8 +267,6 @@ body {
 }
 
 .contacts-header {
-  display: flex;
-  justify-content: space-between;
   margin-top: 1rem;
 }
 
@@ -467,10 +454,6 @@ body {
 }
 
 .section-name {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   cursor: pointer;
 
   padding: 1rem;
@@ -518,10 +501,6 @@ body {
 }
 
 .see-more-reels-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   min-width: 110px;
   min-height: 190px;
   border: 1px solid #ddd;
@@ -529,9 +508,6 @@ body {
 }
 
 .see-more-reels-logo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 2rem;
   height: 2rem;
   background-color: #ddd;
@@ -744,19 +720,10 @@ body {
 }
 
 .room-name {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
   margin-bottom: 0.5rem;
 }
 
 .friend-profile-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin-top: 2rem;
 }
 
@@ -1225,21 +1192,20 @@ body {
   transform: scale(2);
 }
 
-.comment-btn {
-  background-image: url(./images/reactions/kUVRLWRtG-0.png);
+.reaction-btn {
   background-size: 2rem;
-  background-repeat: none;
+  background-repeat: no-repeat;
   width: 1.5rem;
   height: 1.5rem;
+}
+
+.comment-btn {
+  background-image: url(./images/reactions/kUVRLWRtG-0.png);
   background-position-y: 38.3%;
 }
 
 .share-btn {
   background-image: url(./images/reactions/kUVRLWRtG-0.png);
-  background-size: 2rem;
-  background-repeat: no-repeat;
-  width: 1.5rem;
-  height: 1.5rem;
   background-position-y: 46%;
 }
 
@@ -1494,4 +1460,102 @@ body {
 
 .hide {
   display: none;
+}
+
+.flex-column-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-row-spaced {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-row-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shortcut-section-media {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #eee;
+  z-index: 50;
+}
+
+@media (max-width: 1400px) {
+  .contacts-section {
+    display: none;
+  }
+
+  .main-feed-section {
+    margin-left: 360px;
+    margin-right: auto;
+  }
+
+  .search-section input {
+    background: url(./images/navbar/search-icon.svg) no-repeat;
+    background-position: left 50% center;
+    background-size: 20px;
+    width: 40px;
+    outline: none;
+    border: none;
+    resize: none;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+}
+
+@media (max-width: 1032px) {
+  .shortcut-section {
+    display: none;
+  }
+
+  .main-feed-section {
+    margin: 0;
+    padding: 0;
+    max-width: 500px;
+  }
+
+  .on-your-mind-section {
+    max-width: 500px;
+    padding: 0;
+  }
+
+  .personal-share-icons-container {
+    max-width: 500px;
+  }
+
+  .navigation-section {
+    display: none;
+  }
+
+  .story-section-container {
+    max-width: 500px;
+  }
+
+  .section-names {
+    max-width: 500px;
+  }
+
+  .post-container {
+    padding: 0;
+  }
+
+  .post {
+    max-width: 500px;
+  }
+
+  .more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1rem;
+    cursor: pointer;
+  }
 }

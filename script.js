@@ -32,6 +32,8 @@ const slidePreviousButton = document.querySelector(".previous-btn")
 const storySection = document.querySelector(".story-section")
 const reelsSection = document.querySelector(".reels-section")
 const roomsSection = document.querySelector(".rooms-section")
+const shortcutSection = document.querySelector(".shortcut-section")
+const more = document.querySelector(".more")
 let handleLikeExecute = false
 let maxSectionWidth
 let storySectionIndex = 0
@@ -345,6 +347,20 @@ slideNextButton.addEventListener("click", e => {
 
 slidePreviousButton.addEventListener("click", e => {
   handleSlideBackwards(e)
+})
+
+more.addEventListener("click", () => {
+  if (!shortcutSection.classList.contains("shortcut-section-media")) {
+    shortcutSection.style.display = "block"
+    shortcutSection.classList.add("shortcut-section-media")
+    more.classList.add("more-btn-selected")
+    more.querySelector("svg").style.color = "#216fdb"
+  } else {
+    shortcutSection.style.display = "block"
+    shortcutSection.classList.remove("shortcut-section-media")
+    more.classList.remove("more-btn-selected")
+    more.querySelector("svg").style.color = "#aaa"
+  }
 })
 
 function handleSlideForwards(e) {
