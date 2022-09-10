@@ -1,0 +1,420 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Segoe UI Historic;
+  src: url("/fonts/Segoe\ ui\ historic.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #eee;
+  overflow-x: hidden;
+  font-family: "Segoe UI", sans-serif;
+  font-display: swap;
+  position: absolute;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar {
+  position: fixed;
+  padding: 0.5rem;
+  min-width: 100vw;
+  height: 60px;
+  background-color: white;
+  font-size: 12px;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 0 5px 0 #ddd;
+  z-index: 50;
+}
+
+.facebook-logo:hover {
+  cursor: pointer;
+}
+
+.more {
+  display: none;
+}
+
+.more-btn-selected {
+  border-bottom: 3px solid #216fdb;
+}
+
+.navigation-section {
+  width: 500px;
+}
+
+.nav-btn {
+  color: #888;
+  cursor: pointer;
+  min-width: 100px;
+  padding: 0.8rem;
+}
+
+.nav-btn:hover {
+  background-color: hsla(0, 0%, 86%, 0.225);
+  border-radius: 0.3em;
+}
+
+.friends {
+  color: #1b74e4;
+  border-bottom: 3px solid #1b74e4;
+}
+
+.acc {
+  cursor: pointer;
+  margin-right: 1rem;
+  background-color: #ddd;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.acc:last-child {
+  margin-right: 0;
+}
+
+.account-btn:hover {
+  background-color: hsla(0, 3%, 71%, 0.825);
+}
+
+.grid-container {
+  display: grid;
+  grid-gap: 0.11111rem;
+  grid-template-columns: repeat(3, 6px);
+  grid-template-rows: repeat(3, 6px);
+}
+
+.grid-item {
+  background-color: black;
+  border-radius: 50%;
+}
+
+.navbar-profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.navbar-profile-picture:hover {
+  cursor: pointer;
+}
+
+.search-section input {
+  background: url(./images/navbar/search-icon.svg) no-repeat;
+  background-position: left 5% center;
+  background-size: 10px;
+  outline: none;
+  border: none;
+  resize: none;
+  background-color: #eee;
+  width: 120%;
+  overflow: hidden;
+  padding: 0.8rem;
+  padding-left: 2rem;
+  border-radius: 1000000000000px;
+}
+.friends-section-list {
+  position: fixed;
+  top: 60px;
+  min-height: 100vh;
+  max-width: 360px;
+  height: 600px;
+
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  flex-basis: 0;
+  flex-grow: 1;
+  padding: 0 0.3rem;
+  padding-bottom: 3rem;
+}
+
+.friends-section-list {
+  width: 360px;
+  height: 100vh;
+  background-color: white;
+  font-weight: bold;
+  position: fixed;
+}
+
+.list-header {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+.options {
+  background-image: url(./friends-images/yTchWNy_Grf.png);
+  background-repeat: no-repeat;
+  background-position-y: 84.6%;
+  background-position-x: -50%;
+  background-size: 2.5rem;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.4rem;
+  margin-right: 1rem;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.list-element {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 0.5rem;
+  padding: 0.6rem;
+}
+
+.list-element:hover {
+  background-color: #ddd;
+  border-radius: 0.3em;
+  cursor: pointer;
+}
+
+.selected {
+  background-color: #ddd;
+  border-radius: 0.3em;
+}
+
+.list-element:first-child {
+  margin-top: 1rem;
+}
+
+.text-container {
+  height: 2rem;
+  margin-left: 0.5rem;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.arrow-logo {
+  background-image: url(./friends-images/GmYHd0mlXQV.png);
+  background-position-x: 0px;
+  background-position-y: -150px;
+  background-repeat: no-repeat;
+  background-size: 190px 252px;
+  width: 20px;
+  height: 20px;
+}
+
+.home-text {
+  margin-left: 1.5rem;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1rem;
+  background-color: #ddd;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+}
+
+.logo {
+  background-image: url(./friends-images/WFBJjZLn8uM.png);
+  background-size: 34px 638px;
+  background-repeat: no-repeat;
+  background-position-x: 0;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.home-logo {
+  display: flex;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+}
+
+.home-logo img {
+  width: 2rem;
+  height: 2rem;
+  padding: 0.3rem;
+  background-color: #216fdb;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.friend-requests-logo {
+  background-position-y: -332px;
+}
+
+.suggestions-logo {
+  background-position-y: -244px;
+}
+
+.all-friends-logo {
+  background-position-y: -288px;
+}
+
+.birthdays-logo {
+  background-image: url(./friends-images/QpjuM78EXww.png);
+  background-size: 34px 644px;
+  background-position-y: -286px;
+}
+
+.custom-lists-logo {
+  background-position-y: -286px;
+}
+
+.find-friends-section {
+  margin-left: 360px;
+  margin-right: 0px;
+  padding: 2rem;
+
+  position: relative;
+  top: 60px;
+  min-width: calc(100vw - 350px);
+}
+
+.friend-requests-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.friend-requests-you-may-know {
+  margin-top: 1rem;
+}
+
+.friend-request {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+
+.see-all {
+  color: #1b74e4;
+}
+
+.grid-container-friend-requests,
+.grid-container-you-may-know {
+  display: grid;
+  grid-template-columns: repeat(5, 210px);
+  grid-template-rows: repeat(auto, 365px);
+  gap: 10px;
+  padding: 1rem;
+
+  border-bottom: 1px solid rgb(206, 208, 212);
+}
+
+.grid-container-you-may-know {
+  border: none;
+}
+
+.grid-item-requests {
+  background-color: white;
+  width: 210px;
+  height: 365px;
+}
+
+.profile-img-container img {
+  width: 210px;
+  height: 210px;
+  border-top-left-radius: 0.3em;
+  border-top-right-radius: 0.3em;
+}
+
+.profile-name {
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+.mutual-friends {
+  display: flex;
+  align-items: center;
+
+  margin-left: 0.5rem;
+}
+
+.mutual-friends-profile-photos {
+  position: relative;
+
+  display: flex;
+}
+
+.mutual-friends-profile-photos img {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.img-container img {
+  border: 1px solid white;
+  border-radius: 50%;
+  z-index: 5;
+}
+
+.second-img {
+  position: absolute;
+  border: 1px solid white;
+  border-radius: 50%;
+  left: 55%;
+}
+
+.mutual-friends-counter {
+  margin-left: 1.5rem;
+  color: rgb(101, 103, 107);
+}
+
+.buttons-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn button {
+  outline: none;
+  border: none;
+  background: none;
+  padding: 0.7rem 4rem;
+  border-radius: 0.5em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.confirm button {
+  background-color: #1b74e4;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.delete button {
+  background-color: #ddd;
+  padding: 0.7em 4.3rem;
+}
+
+.flex-row-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-row-spaced {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
