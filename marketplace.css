@@ -1,0 +1,500 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Segoe UI Historic;
+  src: url("/fonts/Segoe\ ui\ historic.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #eee;
+  overflow-x: hidden;
+  font-family: "Segoe UI", sans-serif;
+  font-display: swap;
+  position: absolute;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar {
+  position: fixed;
+  padding: 0.5rem;
+  min-width: 100vw;
+  height: 60px;
+  background-color: white;
+  font-size: 12px;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 0 5px 0 #ddd;
+  z-index: 50;
+}
+
+.facebook-logo:hover {
+  cursor: pointer;
+}
+
+.more {
+  display: none;
+}
+
+.more-btn-selected {
+  border-bottom: 3px solid #216fdb;
+}
+
+.navigation-section {
+  width: 500px;
+}
+
+.nav-btn {
+  color: #888;
+  cursor: pointer;
+  min-width: 100px;
+  padding: 0.8rem;
+}
+
+.nav-btn:hover {
+  background-color: hsla(0, 0%, 86%, 0.225);
+  border-radius: 0.3em;
+}
+
+.acc {
+  cursor: pointer;
+  margin-right: 1rem;
+  background-color: #ddd;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.marketplace {
+  border-bottom: 3px solid #1b74e4;
+}
+
+.marketplace svg {
+  color: #1b74e4;
+}
+
+.acc:last-child {
+  margin-right: 0;
+}
+
+.account-btn:hover {
+  background-color: hsla(0, 3%, 71%, 0.825);
+}
+
+.grid-container {
+  display: grid;
+  grid-gap: 0.11111rem;
+  grid-template-columns: repeat(3, 6px);
+  grid-template-rows: repeat(3, 6px);
+}
+
+.grid-item {
+  background-color: black;
+  border-radius: 50%;
+}
+
+.navbar-profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.navbar-profile-picture:hover {
+  cursor: pointer;
+}
+
+.search-section input {
+  background: url(./images/navbar/search-icon.svg) no-repeat;
+  background-position: left 5% center;
+  background-size: 10px;
+  outline: none;
+  border: none;
+  resize: none;
+  background-color: #eee;
+  width: 120%;
+  overflow: hidden;
+  padding: 0.8rem;
+  padding-left: 2rem;
+  border-radius: 1000000000000px;
+}
+
+.marketplace-section {
+  position: fixed;
+  top: 60px;
+  min-height: 100vh;
+  max-width: 360px;
+  height: 600px;
+
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  flex-basis: 0;
+  flex-grow: 1;
+  padding: 0 0.3rem;
+  padding-bottom: 3rem;
+
+  width: 360px;
+  height: 100vh;
+  background-color: white;
+  font-weight: bold;
+  position: fixed;
+}
+
+.marketplace-section input {
+  background: url(./images/navbar/search-icon.svg) no-repeat;
+  background-position: left 5% center;
+  background-size: 10px;
+  outline: none;
+  border: none;
+  resize: none;
+  background-color: #eee;
+  width: 93%;
+  overflow: hidden;
+  padding: 0.6rem;
+  padding-left: 2rem;
+  border-radius: 1000000000000px;
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.marketplace-section-header {
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.options {
+  background-image: url(./friends-images/yTchWNy_Grf.png);
+  background-repeat: no-repeat;
+  background-position-y: 84.6%;
+  background-position-x: -50%;
+  background-size: 2.5rem;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.4rem;
+  margin-right: 1rem;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.logo-container {
+  padding: 0.4rem;
+  border-radius: 50%;
+  background-color: #ddd;
+}
+
+.logo {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yH/r/QPFYH8uPAji.png");
+  background-size: 34px 1568px;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+}
+
+.logo-browse-all {
+  background-position: 0px -958px;
+  -webkit-filter: invert(100%);
+}
+
+.logo-notifications {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yS/r/J3E5RecjPUe.png");
+  background-position: 0 -378px;
+  background-size: 34px 918px;
+}
+
+.logo-inbox {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yS/r/J3E5RecjPUe.png");
+  background-position: 0 -620px;
+  background-size: 34px 918px;
+}
+
+.logo-buying {
+  background-position: 0px -1200px;
+}
+
+.logo-selling {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yS/r/J3E5RecjPUe.png");
+  background-position: 0 -730px;
+  background-size: 34px 918px;
+}
+
+.logo-vehicles {
+  background-position: 0px -584px;
+}
+
+.logo-property-for-rent {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/aEBgLclW2nP.png");
+  background-position: -282px -402px;
+  background-size: 402px 524px;
+}
+
+.logo-classifieds {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yS/r/J3E5RecjPUe.png");
+  background-position: 0px -730px;
+  background-size: 34px 918px;
+}
+
+.logo-clothing {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/aEBgLclW2nP.png");
+  background-position: -194px -424px;
+  background-size: 402px 524px;
+}
+
+.logo-electronics {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yH/r/QPFYH8uPAji.png");
+  background-position: 0px -1002px;
+  background-size: 34px 1568px;
+}
+
+.logo-entertainment {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/aEBgLclW2nP.png");
+  background-position: -238px -402px;
+  background-size: 402px 524px;
+}
+
+.logo-family {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yS/r/J3E5RecjPUe.png");
+  background-position: 0px -576px;
+  background-size: 34px 918px;
+}
+
+.logo-free-stuff {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/aEBgLclW2nP.png");
+  background-position: -216px -424px;
+  background-size: 402px 524px;
+}
+
+.logo-garden-and-outdoors {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/aEBgLclW2nP.png");
+  background-position: -260px -424px;
+  background-size: 402px 524px;
+}
+
+.logo-hobbies {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/aEBgLclW2nP.png");
+  background-position: -194px -402px;
+  background-size: 402px 524px;
+}
+
+.logo-home-goods {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yS/r/J3E5RecjPUe.png");
+  background-position: 0px -598px;
+  background-size: 34px 918px;
+}
+
+.logo-home-improvement-supplies {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/aEBgLclW2nP.png");
+  background-position: -282px -424px;
+  background-size: 402px 524px;
+}
+
+.logo-musical-instruments {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/aEBgLclW2nP.png");
+  background-position: -260px -402px;
+  background-size: 402px 524px;
+}
+
+.logo-office-supplies {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yS/r/J3E5RecjPUe.png");
+  background-position: 0px -730px;
+  background-size: 34px 918px;
+}
+
+.logo-pet-supplies {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/aEBgLclW2nP.png");
+  background-position: -348px -402px;
+  background-size: 402px 524px;
+}
+
+.logo-property-for-sale {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/aEBgLclW2nP.png");
+  background-position: -282px -402px;
+  background-size: 402px 524px;
+}
+
+.logo-sporting-goods {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/aEBgLclW2nP.png");
+  background-position: -370px -402px;
+  background-size: 402px 524px;
+}
+
+.logo-toys-and-games {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yS/r/J3E5RecjPUe.png");
+  background-position: 0px -554px;
+  background-size: 34px 918px;
+}
+
+.logo-buy-and-sell-groups {
+  background-position: 0 -386px;
+}
+
+.logo-container-browse-all {
+  background-color: #1877f2;
+}
+
+.list {
+  margin-top: 1rem;
+}
+
+.list-element {
+  display: flex;
+  align-items: center;
+
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.6rem;
+}
+
+.list-element:hover {
+  background-color: #ddd;
+  border-radius: 0.3em;
+  cursor: pointer;
+}
+
+.list-element-name {
+  margin-left: 1rem;
+}
+
+.selected {
+  background-color: #ddd;
+  border-radius: 0.3em;
+}
+
+.create-new-listing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(0, 227, 204, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 0.3em;
+}
+
+.create-new-listing:hover {
+  background-color: rgba(0, 159, 143, 0.2);
+  cursor: pointer;
+}
+
+.create-new-listing-logo {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yR/r/SL527AxQNwD.png");
+  background-position: -54px -172px;
+  background-size: 190px 204px;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  -webkit-filter: invert(39%) sepia(57%) saturate(200%) saturate(200%)
+    saturate(200%) saturate(200%) saturate(200%) saturate(147.75%)
+    hue-rotate(202deg) brightness(97%) contrast(96%);
+  margin-right: 0.5rem;
+}
+
+.create-new-listing-text {
+  color: #1877f2;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin-top: 1rem;
+  padding: 1rem;
+  border-top: 1px solid #888;
+  border-bottom: 1px solid #888;
+}
+
+.filter-details {
+  margin-top: 1rem;
+  color: #1877f2;
+  font-size: 0.85rem;
+  padding: 0.2rem;
+  border-radius: 0.3em;
+}
+
+.filter-details:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.products-section {
+  margin-left: 360px;
+  margin-right: 0px;
+  padding: 2rem;
+
+  position: relative;
+  top: 60px;
+  min-width: calc(100vw - 350px);
+}
+
+.products-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todays-pick-text {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+
+.location-info {
+  color: #1b74e4;
+}
+
+.products-grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 268px);
+  gap: 10px;
+}
+
+.item-image img {
+  width: 265px;
+  height: 265px;
+  border-top-left-radius: 0.3em;
+  border-top-right-radius: 0.3em;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.item-price {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.item-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.item-location {
+  font-size: 0.75rem;
+  font-weight: normal;
+}
+
+.flex-row-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-row-spaced {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
