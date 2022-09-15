@@ -1,0 +1,296 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Segoe UI Historic;
+  src: url("/fonts/Segoe\ ui\ historic.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #eee;
+  overflow-x: hidden;
+  font-family: "Segoe UI", sans-serif;
+  font-display: swap;
+  position: absolute;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar {
+  position: fixed;
+  padding: 0.5rem;
+  min-width: 100vw;
+  height: 60px;
+  background-color: white;
+  font-size: 12px;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 0 5px 0 #ddd;
+  z-index: 50;
+}
+
+.facebook-logo:hover {
+  cursor: pointer;
+}
+
+.more {
+  display: none;
+}
+
+.more-btn-selected {
+  border-bottom: 3px solid #216fdb;
+}
+
+.navigation-section {
+  width: 500px;
+}
+
+.nav-btn {
+  color: #888;
+  cursor: pointer;
+  min-width: 100px;
+  padding: 0.8rem;
+}
+
+.nav-btn:hover {
+  background-color: hsla(0, 0%, 86%, 0.225);
+  border-radius: 0.3em;
+}
+
+.gaming {
+  color: #1b74e4;
+  border-bottom: 3px solid #1b74e4;
+}
+
+.acc {
+  cursor: pointer;
+  margin-right: 1rem;
+  background-color: #ddd;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.acc:last-child {
+  margin-right: 0;
+}
+
+.account-btn:hover {
+  background-color: hsla(0, 3%, 71%, 0.825);
+}
+
+.grid-container {
+  display: grid;
+  grid-gap: 0.11111rem;
+  grid-template-columns: repeat(3, 6px);
+  grid-template-rows: repeat(3, 6px);
+}
+
+.grid-item {
+  background-color: black;
+  border-radius: 50%;
+}
+
+.navbar-profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.navbar-profile-picture:hover {
+  cursor: pointer;
+}
+
+.search-section input {
+  background: url(./images/navbar/search-icon.svg) no-repeat;
+  background-position: left 5% center;
+  background-size: 10px;
+  outline: none;
+  border: none;
+  resize: none;
+  background-color: #eee;
+  width: 120%;
+  overflow: hidden;
+  padding: 0.8rem;
+  padding-left: 2rem;
+  border-radius: 1000000000000px;
+}
+
+.gaming-section {
+  position: fixed;
+  top: 60px;
+  min-height: 100vh;
+  max-width: 360px;
+  height: 600px;
+
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  flex-basis: 0;
+  flex-grow: 1;
+  padding: 0 0.3rem;
+  padding-bottom: 3rem;
+
+  width: 360px;
+  height: 100vh;
+  background-color: white;
+  font-weight: bold;
+}
+
+.gaming-section input {
+  background: url(./images/navbar/search-icon.svg) no-repeat;
+  background-position: left 5% center;
+  background-size: 10px;
+  outline: none;
+  border: none;
+  resize: none;
+  background-color: #eee;
+  width: 93%;
+  overflow: hidden;
+  padding: 0.6rem;
+  padding-left: 2rem;
+  border-radius: 1000000000000px;
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.gaming-section-header {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.options {
+  background-image: url(./friends-images/yTchWNy_Grf.png);
+  background-repeat: no-repeat;
+  background-position-y: 84.6%;
+  background-position-x: -50%;
+  background-size: 2.5rem;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.4rem;
+  margin-right: 1rem;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.gaming-list {
+  margin-top: 1rem;
+}
+
+.list-element {
+  display: flex;
+  align-items: center;
+
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.6rem;
+}
+
+.list-element:hover {
+  background-color: #ddd;
+  border-radius: 0.3em;
+  cursor: pointer;
+}
+
+.list-element-name {
+  margin-left: 1rem;
+}
+
+.logo-container {
+  padding: 0.4rem;
+  border-radius: 50%;
+  background-color: #ddd;
+}
+
+.logo-container-for-you {
+  background-color: #1b74e4;
+}
+
+.logo,
+.arrow-logo {
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+}
+
+.logo-for-you {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/y_/r/dcIfXs7E6Mv.png");
+  background-position: 0px -452px;
+  background-size: 34px 1634px;
+
+  -webkit-filter: invert(100%);
+}
+
+.logo-video {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yJ/r/HxPp7QkKTYL.png");
+  background-position: 0px -382px;
+  background-size: 25px 580px;
+}
+
+.logo-tournaments {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/tHswKt8Qv3Y.png");
+  background-position: 0 -66px;
+  background-size: 22px 88px;
+}
+
+.logo-play-games {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yE/r/yXXhY7o2Oxt.png");
+  background-position: 0px -478px;
+  background-size: 26px 906px;
+}
+
+.logo-notifications {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yE/r/yXXhY7o2Oxt.png");
+  background-position: 0px -236px;
+  background-size: 26px 906px;
+}
+
+.selected {
+  background-color: #ddd;
+  border-radius: 0.3em;
+}
+
+.arrow-logo {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yP/r/ZVRp7ppcqgx.png");
+  background-position: -132px -128px;
+  background-size: 190px 252px;
+  -webkit-filter: invert(39%) sepia(21%) saturate(200%) saturate(109.5%)
+    hue-rotate(174deg) brightness(94%) contrast(86%);
+}
+
+.text-container {
+  height: 2rem;
+  margin-left: 0.5rem;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-row-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-row-spaced {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hide {
+  display: none;
+}
