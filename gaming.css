@@ -144,6 +144,7 @@ body {
   height: 100vh;
   background-color: white;
   font-weight: bold;
+  overflow-y: auto;
 }
 
 .gaming-section input {
@@ -168,6 +169,10 @@ body {
   margin-bottom: 1rem;
   margin-left: 0.5rem;
   font-size: 1.5rem;
+  border-bottom: 1px solid #888;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .options {
@@ -186,6 +191,10 @@ body {
 
 .gaming-list {
   margin-top: 1rem;
+}
+
+.list {
+  border-bottom: 1px solid #888;
 }
 
 .list-element {
@@ -277,6 +286,222 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.following-streamers-text {
+  margin: 1rem 1rem;
+}
+
+.streamer {
+  display: flex;
+  align-items: center;
+
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.streamer-profile-picture img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.streamer-name {
+  font-weight: normal;
+}
+
+.streamer-game {
+  color: #888;
+  font-size: 0.89rem;
+  font-weight: normal;
+}
+
+.see-more {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 2rem;
+}
+
+.see-more-logo {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/lgJlZnnV-Rd.png");
+  background-position: 0px -62px;
+  background-size: 190px 204px;
+  background-repeat: no-repeat;
+  background-color: #888;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.my-games {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.my-games-text-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.my-games-text {
+  font-weight: 500;
+}
+
+.see-all {
+  color: #1b74e4;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.create-shortcut-text {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  font-weight: lighter;
+  color: #888;
+}
+
+.add-games-container {
+  display: flex;
+  align-items: center;
+
+  margin: 0.5rem 0;
+}
+
+.add-games-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+}
+
+.add-games-logo {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yG/r/Ma8KMLGEmp_.png");
+  background-position: 0px -134px;
+  background-size: 74px 364px;
+  background-repeat: no-repeat;
+  background-color: #888;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+}
+
+.logo-all-games {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/ys/r/j0M7U7A-KeE.png");
+  background-position: 0px -358px;
+  background-size: 34px 632px;
+  -webkit-filter: invert(100%);
+}
+
+.logo-container-all-games {
+  background-color: #1b74e4;
+}
+
+.logo-action {
+  background-image: url("https://www.facebook.com/images/assets_DO_NOT_HARDCODE/facebook_icons/toy-gun_filled_20_primary-icon.png");
+}
+
+.logo-adventure {
+  background-image: url("https://www.facebook.com/images/assets_DO_NOT_HARDCODE/facebook_icons/map_filled_20_primary-icon.png");
+}
+
+.logo-arcade {
+  background-image: url("https://www.facebook.com/images/assets_DO_NOT_HARDCODE/facebook_icons/joystick_filled_20_primary-icon.png");
+}
+
+.logo-battle {
+  background-image: url("https://www.facebook.com/images/assets_DO_NOT_HARDCODE/facebook_icons/sword_filled_20_primary-icon.png");
+}
+
+.logo-board {
+  background-image: url("https://www.facebook.com/images/assets_DO_NOT_HARDCODE/facebook_icons/joystick_filled_20_primary-icon.png");
+}
+
+.logo-builder {
+  background-image: url("https://www.facebook.com/images/assets_DO_NOT_HARDCODE/facebook_icons/castle_filled_20_primary-icon.png");
+}
+
+.logo-card {
+  background-image: url("https://www.facebook.com/images/assets_DO_NOT_HARDCODE/facebook_icons/cards_filled_20_primary-icon.png");
+}
+
+.logo-casino {
+  background-image: url("https://www.facebook.com/images/assets_DO_NOT_HARDCODE/facebook_icons/dice_filled_20_primary-icon.png");
+}
+
+.logo-design {
+  background-image: url("https://www.facebook.com/images/assets_DO_NOT_HARDCODE/facebook_icons/shapes_filled_20_primary-icon.png");
+}
+
+.logo-match {
+  background-image: url("https://www.facebook.com/images/assets_DO_NOT_HARDCODE/facebook_icons/shapes_filled_20_primary-icon.png");
+}
+
+.logo-merge {
+  background-image: url("https://www.facebook.com/images/assets_DO_NOT_HARDCODE/facebook_icons/square-two-dots_filled_20_primary-icon.png");
+}
+
+.logo-puzzle {
+  background-image: url("https://www.facebook.com/images/assets_DO_NOT_HARDCODE/facebook_icons/puzzle_filled_20_primary-icon.png");
+}
+
+.logo-quick-play {
+  background-image: url("https://www.facebook.com/images/assets_DO_NOT_HARDCODE/facebook_icons/stopwatch_filled_20_primary-icon.png");
+}
+
+.logo-quiz-and-trivia {
+  background-image: url("https://www.facebook.com/images/assets_DO_NOT_HARDCODE/facebook_icons/comment-questions-exclamation_filled_20_primary-icon.png");
+}
+
+.logo-racing {
+  background-image: url("https://www.facebook.com/images/assets_DO_NOT_HARDCODE/facebook_icons/flag_filled_20_primary-icon.png");
+}
+
+.logo-role-playing {
+  background-image: url("https://www.facebook.com/images/assets_DO_NOT_HARDCODE/facebook_icons/barbute-helm_filled_20_primary-icon.png");
+}
+
+.logo-runner {
+  background-image: url("https://www.facebook.com/images/assets_DO_NOT_HARDCODE/facebook_icons/running_filled_20_primary-icon.png");
+}
+
+.logo-simulation {
+  background-image: url("https://www.facebook.com/images/assets_DO_NOT_HARDCODE/facebook_icons/simulation_filled_20_primary-icon.png");
+}
+
+.logo-solitaire {
+  background-image: url("https://www.facebook.com/images/assets_DO_NOT_HARDCODE/facebook_icons/solitaire_filled_20_primary-icon.png");
+}
+
+.logo-sport {
+  background-image: url("https://www.facebook.com/images/assets_DO_NOT_HARDCODE/facebook_icons/eight-ball_filled_20_primary-icon.png");
+}
+
+.logo-word {
+  background-image: url("https://www.facebook.com/images/assets_DO_NOT_HARDCODE/facebook_icons/crossword_filled_20_primary-icon.png");
+}
+
+.category-name {
+  margin-left: 0.5rem;
+}
+
+.suggested {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+
+  border-bottom: 1px solid #888;
+
+  margin-bottom: 1rem;
 }
 
 .flex-row-centered {
