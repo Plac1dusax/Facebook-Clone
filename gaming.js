@@ -2,8 +2,37 @@ const video = document.querySelectorAll("video")
 const videoContainer = document.querySelectorAll(".video-container")
 const playPauseBtn = document.querySelectorAll(".play-pause-button")
 const muteBtn = document.querySelectorAll("[data-volume]")
+const miniPlayerBtn = document.querySelectorAll(".mini-player")
 
-// Play-pause
+// Miniplayer
+miniPlayerBtn.forEach(btn => {
+  btn.addEventListener("click", e => {
+    toggleMiniPlayerMode(e)
+  })
+})
+
+function toggleMiniPlayerMode(e) {
+  const container = e.target.closest(".video-container")
+  const video = container.querySelector("video")
+
+  if (container.classList.contains("mini-player-mode")) {
+    document.exitPictureInPicture()
+  } else {
+    video.requestPictureInPicture()
+  }
+}
+
+document.addEventListener("enterpictureinpicture", e => {
+  const container = e.target.closest(".video-container")
+  container.classList.add("mini-player-mode")
+})
+
+document.addEventListener("leavepictureinpicture", e => {
+  const container = e.target.closest(".video-container")
+  container.classList.remove("mini-player-mode")
+})
+
+// Stream play-pause
 playPauseBtn.forEach(btn => {
   btn.addEventListener("click", e => {
     playVideo(e)
