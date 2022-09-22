@@ -3,6 +3,109 @@ const videoContainer = document.querySelectorAll(".video-container")
 const playPauseBtn = document.querySelectorAll(".play-pause-button")
 const muteBtn = document.querySelectorAll("[data-volume]")
 const miniPlayerBtn = document.querySelectorAll(".mini-player")
+const currentTime = document.querySelectorAll(".current-time")
+const totalTime = document.querySelectorAll(".total-time")
+const timelineContainer = document.querySelectorAll(".timeline-container")
+
+// Timeline
+timelineContainer.forEach(container => {
+  container.addEventListener("mousemove", e => {
+    handleTimelineUpdate(e, container)
+  })
+})
+
+timelineContainer.forEach(container => {
+  container.addEventListener("mousemove", e => {
+    const parent = e.target.closest(".video-container")
+    const video = parent.querySelector("video")
+    toggleScrubbing(e, container, video)
+  })
+})
+
+document.addEventListener("mouseup", e => {
+  videoContainer.forEach(videoContainer => {
+    const container = videoContainer.querySelector(".timeline-container")
+    const video = videoContainer.querySelector("video")
+    if (isScrubbing) toggleScrubbing(e, container, video)
+  })
+})
+
+document.addEventListener("mousemove", e => {
+  videoContainer.forEach(videoContainer => {
+    const container = videoContainer.querySelector(".timeline-container")
+    if (isScrubbing) handleTimelineUpdate(e, container)
+  })
+})
+
+let isScrubbing = false
+let wasPaused
+
+function toggleScrubbing(e, container, video) {
+  const rect = container.getBoundingClientRect()
+  const percent = Math.min(Math.max(0, e.x - rect.x), rect.width) / rect.width
+  isScrubbing = (e.buttons & 1) === 1
+  container.classList.toggle("scrubbing", isScrubbing)
+
+  if (isScrubbing) {
+    wasPaused = video.paused
+    video.pause()
+  } else {
+    video.currentTime = percent * video.duration
+    if (!wasPaused) video.play()
+  }
+
+  handleTimelineUpdate(e, container)
+}
+
+function handleTimelineUpdate(e, container) {
+  const rect = container.getBoundingClientRect()
+  const percent = Math.min(Math.max(0, e.x - rect.x), rect.width) / rect.width
+
+  container.style.setProperty("--preview-position", percent)
+
+  if (isScrubbing) {
+    e.preventDefault()
+    container.style.setProperty("--progress-position", percent)
+  }
+}
+
+// Duration
+video.forEach(video => {
+  video.addEventListener("loadeddata", e => {
+    const container = e.target.closest(".video-container")
+    const totalTime = container.querySelector(".total-time")
+
+    totalTime.textContent = formatDuration(video.duration)
+  })
+})
+
+video.forEach(video => {
+  video.addEventListener("timeupdate", e => {
+    const container = e.target.closest(".video-container")
+    const currentTime = container.querySelector(".current-time")
+
+    currentTime.textContent = formatDuration(video.currentTime)
+    const percent = video.currentTime / video.duration
+    container.style.setProperty("--progress-position", percent)
+  })
+})
+
+const leadingZeroFormatter = new Intl.NumberFormat(undefined, {
+  minimumIntegerDigits: 2
+})
+function formatDuration(time) {
+  const seconds = Math.floor(time % 60)
+  const minutes = Math.floor(time / 60) % 60
+  const hours = Math.floor(time / 3600)
+
+  if (hours === 0) {
+    return `${minutes}:${leadingZeroFormatter.format(seconds)}`
+  } else {
+    return `${hours}:${leadingZeroFormatter.format(
+      minutes
+    )}:${leadingZeroFormatter.format(seconds)}`
+  }
+}
 
 // Miniplayer
 miniPlayerBtn.forEach(btn => {

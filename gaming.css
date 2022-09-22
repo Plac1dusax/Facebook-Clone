@@ -617,8 +617,7 @@ video {
 .video-container:not(.active) .total-viewer-container {
   display: none;
 }
-
-.video-container:not(.active) .video-settings-container {
+*/ .video-container:not(.active) .video-settings-container {
   display: none;
 }
 
@@ -682,14 +681,22 @@ video {
 }
 
 .video-settings-container {
+  width: 100%;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100px;
 
   position: absolute;
   bottom: 7%;
   right: 5%;
+}
+
+.user-preferences {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 1rem;
 }
 
 .video-container:hover .stream-info-and-settings::before {
@@ -714,12 +721,20 @@ video {
   -webkit-filter: invert(100%);
 }
 
+.video-settigs,
+.enlarge,
+.mini-player,
+.video-volume {
+  margin-left: 1rem;
+}
+
 .video-volume {
   z-index: 10;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  justify-self: flex-end;
 }
 
 .volume-slider {
@@ -1088,10 +1103,86 @@ video {
   -webkit-filter: invert(100%);
 }
 
+.video-duration {
+  color: white;
+  display: flex;
+  margin-left: 60px;
+  margin-right: auto;
+  justify-self: flex-start;
+}
+
 .posted-video {
   width: 700px;
   height: 350px;
   margin-top: 5px;
+}
+
+.timeline-container {
+  height: 7px;
+  margin-inline: 0.5rem;
+  z-index: 50;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  margin-right: auto;
+  align-items: center;
+}
+
+.timeline {
+  background-color: rgba(100, 100, 100, 0.5);
+  height: 3px;
+  width: 100%;
+  z-index: 10;
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: calc(100% - var(--preview-position) * 100%);
+  background-color: rgb(150, 150, 150);
+  display: none;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: calc(100% - var(--progress-position) * 100%);
+  background-color: #1b74e4;
+}
+
+.timeline .thumb-indicator {
+  --scale: 0;
+  position: absolute;
+  transform: translateX(-50%) scale(--scale);
+  height: 200%;
+  top: -50%;
+  left: calc(var(--progress-position) * 100%);
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 150ms ease-in-out;
+  aspect-ratio: 1 / 1;
+}
+
+.video-container.scrubbing .timeline::before,
+.timeline-container:hover .timeline::before {
+  display: block;
+}
+
+.video-container.scrubbing .thumb-indicator::before,
+.timeline-container:hover .thumb-indicator {
+  --scale: 1;
+}
+
+.video-container.scrubbing .timeline,
+.timeline-container:hover .timeline {
+  height: 100%;
 }
 
 .hide {
