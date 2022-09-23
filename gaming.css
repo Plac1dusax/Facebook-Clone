@@ -682,7 +682,6 @@ video {
 
 .video-settings-container {
   width: 100%;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -719,6 +718,48 @@ video {
   height: 20px;
   z-index: 10;
   -webkit-filter: invert(100%);
+}
+
+.post-video-play-icon-container,
+.post-video-pause-icon-container {
+  width: 24px;
+  height: 24px;
+  -webkit-filter: invert(100%);
+}
+
+.post-video-play-icon-container img,
+.post-video-pause-icon-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.post-play-pause-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 20;
+  margin-left: 3rem;
+  margin-right: 0.5rem;
+}
+
+.start-post-video-btn-container {
+  width: 100px;
+  height: 100px;
+  -webkit-filter: invert(100%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 500;
+  opacity: 0.7;
+}
+
+.start-post-video-btn-container:hover {
+  opacity: 1;
+}
+
+.start-post-video-btn-container img {
+  scale: 1.5;
 }
 
 .video-settigs,
@@ -1106,9 +1147,8 @@ video {
 .video-duration {
   color: white;
   display: flex;
-  margin-left: 60px;
-  margin-right: auto;
   justify-self: flex-start;
+  margin-right: auto;
 }
 
 .posted-video {
@@ -1168,6 +1208,7 @@ video {
   border-radius: 50%;
   transition: transform 150ms ease-in-out;
   aspect-ratio: 1 / 1;
+  z-index: 20;
 }
 
 .video-container.scrubbing .timeline::before,
