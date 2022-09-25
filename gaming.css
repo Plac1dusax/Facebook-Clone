@@ -136,6 +136,7 @@ body {
   flex-direction: column;
   flex-basis: 0;
   flex-grow: 1;
+  flex-shrink: 1;
   padding: 0 0.3rem;
   padding-bottom: 3rem;
 
@@ -527,8 +528,8 @@ body {
   justify-content: space-around;
   align-items: center;
   width: fit-content;
-  height: 360px;
-  background-color: green;
+  height: 440px;
+  background: linear-gradient(to right, black, rgb(74, 10, 10), black);
 
   transform: translateX(-980px);
   z-index: -5999;
@@ -542,7 +543,6 @@ body {
 }
 
 video {
-  margin-top: 10px;
   width: 640px;
   height: 340px;
 }
@@ -617,14 +617,15 @@ video {
 .video-container:not(.active) .total-viewer-container {
   display: none;
 }
-*/ .video-container:not(.active) .video-settings-container {
+
+.video-container:not(.active) .video-settings-container {
   display: none;
 }
 
 .video-container:not(.active) video {
   content: "";
   display: block;
-  filter: invert(80%) opacity(0.6);
+  filter: invert(80%) blur(1px) opacity(0.6);
   z-index: -1;
 }
 
@@ -677,11 +678,22 @@ video {
   z-index: 10;
   width: 20px;
   height: 20px;
+  margin-right: 1rem;
   -webkit-filter: invert(100%);
 }
 
 .video-settings-container {
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+}
+
+.stream-video-settings-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -698,15 +710,31 @@ video {
   margin-left: 1rem;
 }
 
+.stream-info-and-settings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .video-container:hover .stream-info-and-settings::before {
   content: "";
   position: absolute;
-  bottom: 2%;
+  bottom: 5.5%;
   left: 2.7%;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
   width: 94.5%;
   aspect-ratio: 6 / 1;
   z-index: 2;
+}
+
+.video-container:hover .video-settings-container::before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
+  width: 100%;
+  left: 5%;
+  bottom: -20px;
+  aspect-ratio: 6 / 1;
 }
 
 .video-settings {
@@ -885,7 +913,6 @@ video {
   top: 100px;
   left: 500px;
   width: 850px;
-  height: 250px;
 }
 
 .featured-games-wrapper {
@@ -1054,6 +1081,8 @@ video {
   margin-top: 1.5rem;
   width: 100%;
   height: 610px;
+  border-radius: 0.3em;
+  box-shadow: 0 0 5px 0 hsla(0, 5%, 16%, 0.825);
 
   background-color: white;
 }
@@ -1103,15 +1132,17 @@ video {
 
 .op-comment {
   margin-left: 1rem;
+  margin-bottom: 1rem;
 }
 
 .post-video-container {
   background-color: black;
+  height: 430px;
 }
 
 .post-video {
-  margin: auto;
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   background-color: black;
@@ -1152,9 +1183,8 @@ video {
 }
 
 .posted-video {
-  width: 700px;
-  height: 350px;
-  margin-top: 5px;
+  width: 100%;
+  height: 420px;
 }
 
 .timeline-container {
@@ -1226,6 +1256,257 @@ video {
   height: 100%;
 }
 
+.buttons-container {
+  padding: 0.2rem 1rem;
+  margin-top: 0.5rem;
+  height: 3rem;
+
+  display: flex;
+  justify-content: space-around;
+
+  border-top: 0.5px solid #999;
+}
+
+.reaction {
+  width: 100%;
+  padding: 0.2rem;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #888;
+}
+
+.reaction:hover {
+  border-radius: 0.3em;
+  background-color: #eee;
+}
+
+.reaction > div {
+  margin-right: 0.3rem;
+}
+
+.reaction-like {
+  position: relative;
+}
+
+.emotions-container {
+  position: absolute;
+  background-color: white;
+  border-radius: 50000000000000000px;
+  left: -2rem;
+  top: -3.3rem;
+  box-shadow: 0 0 2px black;
+  z-index: 10;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.emotions-container img,
+.emotions-container-comment img {
+  width: 3rem;
+  height: 3rem;
+  transform: scale() 200ms;
+}
+.emoji-care img {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.emotions-container img,
+.care img {
+  margin-right: 1rem;
+}
+.emoji-like {
+  margin-left: 0.7rem;
+}
+.emotions-container img:hover,
+.emoji > img:hover,
+.care img:hover {
+  transform: scale(2);
+}
+
+.reaction-btn {
+  background-size: 2rem;
+  background-repeat: no-repeat;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.like-btn {
+  background-image: url(./images/reactions/kUVRLWRtG-0.png);
+  background-position: center;
+  background-size: 2rem;
+  background-repeat: none;
+  background-position-y: 43.5%;
+  width: 2rem;
+  height: 1.5rem;
+}
+
+.comment-btn {
+  background-image: url(./images/reactions/kUVRLWRtG-0.png);
+  background-position-y: 38.3%;
+}
+
+.share-btn {
+  background-image: url(./images/reactions/kUVRLWRtG-0.png);
+  background-position-y: 46%;
+}
+
+.btn-text {
+  font-weight: 500;
+}
+
 .hide {
   display: none;
+}
+
+.category-buttons {
+  display: none;
+}
+
+.category-btn {
+  cursor: pointer;
+  background-color: #ddd;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  border-radius: 1000000000000px;
+  word-wrap: nowrap;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+
+.category-btn:hover {
+  background-color: #aaa;
+}
+
+.active-category {
+  background-color: #e7f3ff;
+  color: #216fdb;
+  border: 1px solid rgba(56, 88, 152, 0.1);
+}
+
+.active-category:hover {
+  background-color: #c6e2ee;
+}
+
+@media (max-width: 1370px) {
+  .recent-activities-and-features {
+    left: 400px;
+    width: 600px;
+  }
+
+  .post {
+    width: 100%;
+    height: 590px;
+  }
+
+  .start-post-video-btn-container {
+    left: 55%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+@media (max-width: 1080px) {
+  .main-video-container {
+    width: 600px;
+    height: 500px;
+    transform: translateX(0px);
+  }
+
+  .active {
+    width: 100%;
+    height: 100%;
+  }
+
+  .active video {
+    width: 100%;
+    height: 100%;
+  }
+
+  .active .slide-btn {
+    display: none;
+  }
+
+  .video-container .stream-info-and-settings::before {
+    content: "";
+    position: absolute;
+    bottom: 5.5%;
+    left: 2.7%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
+    width: 94.5%;
+    aspect-ratio: 6 / 1;
+    z-index: 2;
+  }
+
+  .video-container:not(.active) {
+    display: none;
+  }
+
+  .recent-activities-and-features {
+    left: 400px;
+    width: 400px;
+  }
+
+  .post {
+    height: 420px;
+  }
+
+  .start-post-video-btn-container {
+    left: 55%;
+    top: 55%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+@media (max-width: 950px) {
+  .gaming-section {
+    display: none;
+  }
+
+  .live-stream-section {
+    left: 0;
+  }
+
+  .main-video-container {
+    width: 800px;
+    height: 500px;
+    transform: translateX(0px);
+  }
+
+  .active {
+    width: 100%;
+    height: 100%;
+  }
+
+  .active video {
+    width: 100%;
+    height: 100%;
+  }
+
+  .active .slide-btn {
+    display: none;
+  }
+
+  .recent-activities-and-features {
+    left: 0;
+    width: 800px;
+  }
+
+  .category-buttons {
+    display: block;
+    position: relative;
+    width: 400px;
+    top: 60px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
