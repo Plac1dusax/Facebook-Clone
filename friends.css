@@ -112,17 +112,15 @@ body {
 
 .search-section input {
   background: url(./images/navbar/search-icon.svg) no-repeat;
-  background-position: left 5% center;
-  background-size: 10px;
+  background-position: left 50% center;
+  background-size: 20px;
+  width: 40px;
+  padding: 0.8em;
   outline: none;
   border: none;
   resize: none;
   background-color: #eee;
-  width: 120%;
-  overflow: hidden;
-  padding: 0.8rem;
-  padding-left: 2rem;
-  border-radius: 1000000000000px;
+  border-radius: 50%;
 }
 .friends-section-list {
   position: fixed;
@@ -426,4 +424,41 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@media (max-width: 1450px) {
+  .grid-container-friend-requests,
+  .grid-container-you-may-know {
+    grid-template-columns: repeat(4, 210px);
+  }
+}
+
+@media (max-width: 1250px) {
+  .grid-container-friend-requests,
+  .grid-container-you-may-know {
+    grid-template-columns: repeat(3, 210px);
+  }
+}
+
+@media (max-width: 1050px) {
+  .grid-container-friend-requests,
+  .grid-container-you-may-know {
+    grid-template-columns: repeat(2, 210px);
+  }
+}
+
+@media (max-width: 850px) {
+  .grid-container-friend-requests,
+  .grid-container-you-may-know,
+  .friend-requests-header {
+    display: none;
+  }
+
+  .navigation-section {
+    display: none;
+  }
+
+  .more {
+    display: block;
+  }
 }
