@@ -107,6 +107,7 @@ body {
   height: 40px;
   border-radius: 50%;
   margin-right: 1rem;
+  object-fit: cover;
 }
 
 .navbar-profile-picture:hover {
@@ -114,15 +115,16 @@ body {
 }
 
 .search-section input {
-  background: url(./images/navbar/search-icon.svg) no-repeat;
+  background: url("https://www.freeiconspng.com/uploads/magnifying-glass-icon-24.png")
+    no-repeat;
   background-position: left 50% center;
   background-size: 20px;
   width: 40px;
-  padding: 0.8em;
   outline: none;
   border: none;
   resize: none;
   background-color: #eee;
+  padding: 0.7rem;
   border-radius: 50%;
 }
 
@@ -148,40 +150,44 @@ body {
 }
 
 .marketplace-section input {
-  background: url(./images/navbar/search-icon.svg) no-repeat;
-  background-position: left 5% center;
-  background-size: 10px;
+  background: url("https://www.freeiconspng.com/uploads/magnifying-glass-icon-24.png")
+    no-repeat;
+  background-position: left 3% center;
+  background-size: 15px;
   outline: none;
   border: none;
   resize: none;
   background-color: #eee;
-  width: 93%;
+  width: 100%;
   overflow: hidden;
-  padding: 0.6rem;
+  padding: 0.8rem;
   padding-left: 2rem;
   border-radius: 1000000000000px;
-  margin-left: 0.5rem;
-  margin-top: 0.5rem;
 }
 
 .marketplace-section-header {
   margin-top: 1rem;
   margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
   font-size: 1.5rem;
 }
 
-.options {
-  background-image: url(./friends-images/yTchWNy_Grf.png);
-  background-repeat: no-repeat;
-  background-position-y: 84.6%;
-  background-position-x: -50%;
-  background-size: 2.5rem;
-  width: 2rem;
-  height: 2rem;
+.options-icon-container {
+  background-color: #eee;
   padding: 0.4rem;
   margin-right: 1rem;
-  background-color: #eee;
   border-radius: 50%;
+  width: 32px;
+  height: 32px;
+}
+
+.options-icon {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yP/r/XwOHb3iFP5m.png");
+  background-position: -88px -132px;
+  background-size: 190px 204px;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
 }
 
 .logo-container {
@@ -462,6 +468,7 @@ body {
   height: 265px;
   border-top-left-radius: 0.3em;
   border-top-right-radius: 0.3em;
+  object-fit: cover;
 }
 
 .item-info {
@@ -544,19 +551,20 @@ body {
 }
 
 .marketplace-shrink-search input {
-  background: url(./images/navbar/search-icon.svg) no-repeat;
-  background-position: left 1.5% center;
-  background-size: 10px;
+  background: url("https://www.freeiconspng.com/uploads/magnifying-glass-icon-24.png")
+    no-repeat;
+  background-position: left 3% center;
+  background-size: 15px;
   outline: none;
   border: none;
   resize: none;
-  background-color: #ddd;
-  width: 90%;
+  background-color: #eee;
+  width: 120%;
   overflow: hidden;
   padding: 0.8rem;
   padding-left: 2rem;
   border-radius: 1000000000000px;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
 }
 
 @media (max-width: 1400px) {
