@@ -238,6 +238,10 @@ body {
   margin-top: 1rem;
 }
 
+.shortcut-image img {
+  border-radius: 0.3em;
+}
+
 .footer {
   word-wrap: break-word;
   max-width: initial;

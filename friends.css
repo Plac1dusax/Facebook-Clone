@@ -152,13 +152,12 @@ body {
 }
 
 .options {
-  background-image: url(./friends-images/yTchWNy_Grf.png);
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yP/r/XwOHb3iFP5m.png");
+  background-position: -88px -132px;
+  background-size: 190px 204px;
   background-repeat: no-repeat;
-  background-position-y: 84.6%;
-  background-position-x: -50%;
-  background-size: 2.5rem;
-  width: 2rem;
-  height: 2rem;
+  width: 20px;
+  height: 20px;
   padding: 0.4rem;
   margin-right: 1rem;
   background-color: #eee;
@@ -239,40 +238,60 @@ body {
 .home-logo {
   display: flex;
   align-items: center;
+  background-color: #1b74a1;
+  margin-left: 0.5rem;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+}
+
+.home-logo-icon {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yP/r/XwOHb3iFP5m.png");
+  background-position: -22px -132px;
+  background-size: 190px 204px;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  -webkit-filter: invert(100%);
+}
+
+.friend-requests-logo,
+.suggestions-logo,
+.all-friends-logo,
+.custom-lists-logo {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/NAaRay30Dty.png");
+  background-position: 0px -332px;
+  background-size: 34px 728px;
+  background-repeat: no-repeat;
   width: 20px;
   height: 20px;
 }
 
-.home-logo img {
-  width: 2rem;
-  height: 2rem;
-  padding: 0.3rem;
-  background-color: #216fdb;
-  border-radius: 50%;
-  margin-right: 0.5rem;
-  margin-left: 0.5rem;
-}
-
-.friend-requests-logo {
-  background-position-y: -332px;
-}
-
 .suggestions-logo {
-  background-position-y: -244px;
+  background-position: 0px -244px;
 }
 
 .all-friends-logo {
-  background-position-y: -288px;
+  background-position: 0px -288px;
 }
 
 .birthdays-logo {
-  background-image: url(./friends-images/QpjuM78EXww.png);
-  background-size: 34px 644px;
-  background-position-y: -286px;
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yR/r/gQOi8KtPYi5.png");
+  background-position: 0px -530px;
+  background-size: 34px 910px;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
 }
 
 .custom-lists-logo {
-  background-position-y: -286px;
+  background-position: 0px -288px;
 }
 
 .find-friends-section {
