@@ -4,6 +4,21 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-blue-color: #1b74e4;
+  --primary-button-background: #e4e6eb;
+  --main-body-color: #eee;
+  --main-border-color: #aaa;
+  --title-color: #65676b;
+  --light-gray-hover-color: hsla(0, 0%, 86%, 0.225);
+  --dark-gray-hover-color: hsla(0, 3%, 71%, 0.125);
+  --account-btn-hover-color: hsla(0, 3%, 71%, 0.825);
+  --white-theme-color: white;
+  --user-online-color: green;
+  --custom-scrollbar-color: #ced0d4;
+  --nav-btn-color: #888;
+}
+
 @font-face {
   font-family: Segoe UI Historic;
   src: url("/fonts/Segoe\ ui\ historic.ttf");
@@ -14,7 +29,7 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: #eee;
+  background-color: var(--main-body-color);
   overflow-x: hidden;
   font-family: "Segoe UI", sans-serif;
   font-display: swap;
@@ -33,7 +48,7 @@ body {
   padding: 0.5rem;
   min-width: 100vw;
   height: 60px;
-  background-color: white;
+  background-color: var(--white-theme-color);
   font-size: 12px;
   border-bottom: 1px solid #ddd;
   box-shadow: 0 0 5px 0 #ddd;
@@ -45,7 +60,7 @@ body {
 }
 
 .more-btn-selected {
-  border-bottom: 3px solid #216fdb;
+  border-bottom: 3px solid var(--primary-blue-color);
 }
 
 .facebook-logo:hover {
@@ -60,7 +75,7 @@ body {
   outline: none;
   border: none;
   resize: none;
-  background-color: #eee;
+  background-color: var(--main-body-color);
   width: 120%;
   overflow: hidden;
   padding: 0.8rem;
@@ -73,20 +88,20 @@ body {
 }
 
 .nav-btn {
-  color: #888;
+  color: var(--nav-btn-color);
   cursor: pointer;
   min-width: 100px;
   padding: 0.8rem;
 }
 
 .nav-btn:hover {
-  background-color: hsla(0, 0%, 86%, 0.225);
+  background-color: var(--light-gray-hover-color);
   border-radius: 0.3em;
 }
 
 .home {
-  color: #1b74e4;
-  border-bottom: 3px solid #1b74e4;
+  color: var(--primary-blue-color);
+  border-bottom: 3px solid var(--primary-blue-color);
 }
 
 .acc {
@@ -102,7 +117,7 @@ body {
 }
 
 .account-btn:hover {
-  background-color: hsla(0, 3%, 71%, 0.825);
+  background-color: var(--account-btn-hover-color);
 }
 
 .grid-container {
@@ -156,6 +171,21 @@ body {
   padding-bottom: 3rem;
 }
 
+.shortcut-section::-webkit-scrollbar-thumb,
+.contacts-section::-webkit-scrollbar-thumb {
+  background-color: var(--custom-scrollbar-color);
+}
+
+.shortcut-section::-webkit-scrollbar-track,
+.contacts-section::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.shortcut-section::-webkit-scrollbar,
+.contacts-section::-webkit-scrollbar {
+  width: 0.5vw;
+}
+
 .shortcut-container {
   margin-top: 1rem;
 }
@@ -163,8 +193,8 @@ body {
 .default-shortcut-container,
 .sponsored-container,
 .person-container {
-  border-bottom: 0.5px solid #aaa;
-  box-shadow: 0px 1px 0px #aaa;
+  border-bottom: 0.5px solid var(--main-border-color);
+  box-shadow: 0px 1px 0px var(--main-border-color);
 }
 
 .show-btn-default {
@@ -175,7 +205,7 @@ body {
 .person {
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   font-size: 0.9375rem;
   font-weight: 500;
 }
@@ -189,8 +219,9 @@ body {
 .shortcut:hover,
 .person:hover,
 .group:hover,
-.create-group:hover {
-  background-color: hsla(0, 0%, 87%, 0.673);
+.create-group:hover,
+.show-btn:hover {
+  background-color: var(--dark-gray-hover-color);
   border-radius: 0.3em;
   cursor: pointer;
 }
@@ -199,6 +230,7 @@ body {
   display: flex;
   align-items: center;
   padding: 0 0.3rem;
+  margin-bottom: 0.5rem;
 }
 
 .show-btn svg {
@@ -225,7 +257,7 @@ body {
 
 .your-shortcuts {
   font-size: 1.0625rem;
-  color: #65676b;
+  color: var(--title-color);
   font-weight: 600;
   padding: 0 0.3rem;
 }
@@ -304,11 +336,11 @@ body {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: green;
+  background-color: var(--user-online-color);
   right: 89%;
   top: 70%;
   padding: 0.2rem;
-  border: 2px solid white;
+  border: 2px solid var(--white-theme-color);
 }
 
 .group {
@@ -341,9 +373,9 @@ body {
   border-radius: 50%;
   right: 20%;
   bottom: 0%;
-  background-color: green;
+  background-color: var(--user-online-color);
   padding: 0.2rem;
-  border: 2px solid white;
+  border: 2px solid var(--white-theme-color);
   z-index: 3;
 }
 
@@ -370,7 +402,7 @@ body {
 .title {
   margin-top: 1rem;
   font-size: 1.1rem;
-  color: #666;
+  color: var(--title-color);
 }
 
 .title:first-child {
@@ -381,23 +413,28 @@ body {
   color: #666;
 }
 
-.create-message-container {
-  position: absolute;
-  bottom: 12%;
-  right: 15%;
-}
-
-.create-message img {
-  width: 18px;
-  height: 18px;
-}
-
-.create-message {
-  background-color: white;
+.create-message-icon-container {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  padding: 1rem;
+  background-color: var(--white-theme-color);
   border-radius: 50%;
   box-shadow: 0 0 3px #777;
-  padding: 1rem;
+}
+
+.create-message-icon {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yi/r/4UmT4V1o0oJ.png");
+  background-position: 0px -662px;
+  background-size: 34px 1554px;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+}
+
+.create-message-icon-container:hover {
   cursor: pointer;
+  box-shadow: 0 0 3px #444;
 }
 
 .create-group {
@@ -431,7 +468,7 @@ body {
 }
 
 .story-section-container {
-  background-color: white;
+  background-color: var(--white-theme-color);
   margin: auto;
   max-width: calc(5 * 118px);
   height: 270px;
@@ -454,11 +491,11 @@ body {
   align-items: center;
 
   border-bottom: 1px solid hsla(200, 10%, 60%, 0.5);
-  background-color: white;
+  background-color: var(--white-theme-color);
 
   font-size: 0.9rem;
   font-weight: bold;
-  color: #65676b;
+  color: var(--title-color);
 }
 
 .section-name {
@@ -469,7 +506,7 @@ body {
 }
 
 .section-name:hover {
-  background-color: hsla(0, 3%, 71%, 0.125);
+  background-color: var(--dark-gray-hover-color);
   border-radius: 0.3em;
 }
 
@@ -502,7 +539,7 @@ body {
   position: relative;
   width: 110px;
   height: 190px;
-  background-color: white;
+  background-color: var(--white-theme-color);
   cursor: pointer;
 
   margin-right: 7.5rem;
@@ -516,20 +553,22 @@ body {
 }
 
 .see-more-reels-logo-container {
-  width: 2rem;
-  height: 2rem;
-  background-color: #ddd;
+  background-color: var(--primary-button-background);
+  padding: 1rem;
   border-radius: 50%;
-  padding: 1.5rem;
 }
 
 .see-more-reels-logo {
-  background-image: url(./images/reels/_MZsKrybMEI.png);
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/_MZsKrybMEI.png");
+  background-position: 0px -26px;
+  background-size: 26px 52px;
   background-repeat: no-repeat;
-  background-position-y: 80%;
-  width: 1.5rem;
-  height: 1.5rem;
-  padding: 1rem;
+  width: 24px;
+  height: 24px;
+}
+
+.see-more-reels-container:hover {
+  background-color: var(--dark-gray-hover-color);
 }
 
 .see-more-reels {
@@ -554,7 +593,7 @@ body {
 }
 
 .total-watch-count {
-  color: white;
+  color: var(--white-theme-color);
   font-weight: bold;
   font-size: 0.9rem;
 }
@@ -607,12 +646,12 @@ body {
   border-radius: 50%;
   bottom: 15%;
   right: 0%;
-  background-color: green;
-  border: 1px solid white;
+  background-color: var(--user-online-color);
+  border: 1px solid var(--white-theme-color);
 }
 
 .user-name {
-  color: #eee;
+  color: var(--main-body-color);
   font-weight: bold;
 
   position: absolute;
@@ -642,8 +681,8 @@ body {
   transform: translate(-50%, 50%);
 
   border-radius: 50%;
-  background-color: #1b74e4;
-  border: 5px solid white;
+  background-color: var(--primary-blue-color);
+  border: 5px solid var(--white-theme-color);
 
   display: flex;
   justify-content: center;
@@ -660,7 +699,7 @@ body {
 }
 
 .add-story-btn {
-  color: white;
+  color: var(--white-theme-color);
   display: flex;
 }
 
@@ -697,7 +736,7 @@ body {
 }
 
 .room:hover {
-  background-color: hsla(0, 3%, 71%, 0.325);
+  background-color: var(--dark-gray-hover-color);
 }
 
 .info {
@@ -716,18 +755,18 @@ body {
   align-items: center;
   margin-top: 2px;
 
-  padding: 0.3rem;
+  padding: 1rem;
   border: 1px solid hsla(0, 3%, 71%, 0.225);
   border-radius: 50%;
 }
 
 .create-room-logo {
-  background-image: url(./images/rooms/8m8W6qk28Db.png);
-  background-position-x: -1.3%;
-  background-position-y: 101%;
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yN/r/8m8W6qk28Db.png");
+  background-position: 0px -220px;
+  background-size: 502px 246px;
   background-repeat: no-repeat;
-  width: 48px;
-  height: 48px;
+  width: 24px;
+  height: 24px;
 }
 
 .room-name {
@@ -760,7 +799,7 @@ body {
   padding: 0.5rem 3rem;
   border-radius: 0.3em;
   background-color: transparent;
-  color: #1b74e4;
+  color: var(--primary-blue-color);
   font-weight: bold;
   cursor: pointer;
 }
@@ -769,7 +808,7 @@ body {
   position: absolute;
   color: #555;
   font-weight: 500;
-  background-color: white;
+  background-color: var(--white-theme-color);
   box-shadow: 0 0 3px #888;
   padding: 0.9rem;
   border-radius: 50%;
@@ -787,7 +826,7 @@ body {
 }
 
 .slide-btn:hover {
-  background-color: #eee;
+  background-color: var(--main-body-color);
   cursor: pointer;
 }
 
@@ -801,7 +840,7 @@ body {
   border-radius: 0.3em;
   width: 590px;
   margin-top: 2rem;
-  background-color: white;
+  background-color: var(--white-theme-color);
   padding: 1rem;
 }
 
@@ -828,7 +867,7 @@ body {
   outline: none;
   border: none;
   border-radius: 100000000000px;
-  background-color: #ddd;
+  background-color: var(--main-body-color);
   width: 100%;
   height: 2.5rem;
   font-size: 1.2rem;
@@ -854,7 +893,7 @@ body {
 }
 
 .icon:hover {
-  background-color: hsla(0, 3%, 71%, 0.325);
+  background-color: var(--dark-gray-hover-color);
 }
 
 .icon svg {
@@ -879,7 +918,7 @@ body {
   border-radius: 0.3em;
   width: 590px;
   margin: 2rem auto;
-  background-color: white;
+  background-color: var(--white-theme-color);
   padding: 1rem;
 
   display: flex;
@@ -890,7 +929,7 @@ body {
 .create-room {
   margin-right: 1rem;
   margin-left: 0.5rem;
-  color: #1b74e4;
+  color: var(--primary-blue-color);
   font-weight: 500;
 }
 
@@ -926,7 +965,7 @@ body {
   border-radius: 0.3em;
   width: 590px;
   margin: 2rem auto;
-  background-color: #eee;
+  background-color: var(--main-body-color);
   padding: 1rem;
 }
 
@@ -979,7 +1018,7 @@ body {
 }
 
 .post {
-  background-color: white;
+  background-color: var(--white-theme-color);
   margin-bottom: 2rem;
   border-radius: 0.3em;
 }
@@ -1077,7 +1116,7 @@ body {
 
 .reaction:hover {
   border-radius: 0.3em;
-  background-color: #eee;
+  background-color: var(--dark-gray-hover-color);
 }
 
 .reaction > div {
@@ -1184,7 +1223,7 @@ body {
 
 .emotions-container {
   position: absolute;
-  background-color: white;
+  background-color: var(--white-theme-color);
   border-radius: 50000000000000000px;
   left: -2rem;
   top: -3.3rem;
@@ -1286,10 +1325,10 @@ body {
   content: "";
   width: 0.7rem;
   height: 0.7rem;
-  background-color: green;
+  background-color: var(--user-online-color);
   border-radius: 50%;
   position: absolute;
-  border: 3px solid white;
+  border: 3px solid var(--white-theme-color);
   top: 65%;
   left: 65%;
 }
@@ -1307,7 +1346,7 @@ body {
   border: none;
   outline: none;
   height: 2rem;
-  background-color: #eee;
+  background-color: var(--main-body-color);
   font-size: 0.9rem;
 }
 
@@ -1376,7 +1415,7 @@ body {
   border-radius: 0.6em;
   margin-left: 0.5rem;
 
-  background-color: #eee;
+  background-color: var(--main-body-color);
 }
 
 .commentator-name {
@@ -1443,7 +1482,7 @@ body {
 
 .emotions-container-comment {
   position: absolute;
-  background-color: white;
+  background-color: var(--white-theme-color);
   border-radius: 50000000000000000px;
   left: -0.5rem;
   top: -3rem;
@@ -1459,7 +1498,7 @@ body {
   position: absolute;
   right: 0%;
   bottom: -120%;
-  background-color: white;
+  background-color: var(--white-theme-color);
   padding: 0 0.5rem;
   border-radius: 0.5rem;
 
@@ -1506,7 +1545,7 @@ body {
 .shortcut-section-media {
   min-width: 100vw;
   min-height: 100vh;
-  background-color: #eee;
+  background-color: var(--main-body-color);
   z-index: 50;
 }
 
@@ -1529,7 +1568,7 @@ body {
     outline: none;
     border: none;
     resize: none;
-    background-color: #eee;
+    background-color: var(--main-body-color);
     border-radius: 50%;
   }
 }
@@ -1540,7 +1579,7 @@ body {
   }
 
   .main-feed-section {
-    margin: 0;
+    margin: auto;
     padding: 0;
     max-width: 500px;
   }

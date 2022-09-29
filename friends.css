@@ -14,11 +14,32 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: #eee;
+  background-color: var(--main-body-color);
   overflow-x: hidden;
   font-family: "Segoe UI", sans-serif;
   font-display: swap;
   position: absolute;
+}
+
+:root {
+  --primary-blue-color: #1b74e4;
+  --primary-button-background: #e4e6eb;
+  --main-body-color: #eee;
+  --main-border-color: #aaa;
+  --title-color: #65676b;
+  --dark-gray-hover-color: hsla(0, 0%, 86%, 0.825);
+  --light-gray-hover-color: hsla(0, 3%, 71%, 0.125);
+  --account-btn-hover-color: hsla(0, 3%, 71%, 0.825);
+  --white-theme-color: white;
+  --user-online-color: green;
+  --custom-scrollbar-color: #ced0d4;
+  --invert-color: invert(100%);
+  --delete-btn-hover-color: #ddd;
+  --primary-hover-blue: #1a63d3;
+  --header-color: #121;
+  --light-blue-theme: rgba(0, 227, 204, 0.2);
+  --nav-btn-color: #888;
+  --logo-container-color: #ddd;
 }
 
 .navbar {
@@ -55,20 +76,20 @@ body {
 }
 
 .nav-btn {
-  color: #888;
+  color: var(--nav-btn-color);
   cursor: pointer;
   min-width: 100px;
   padding: 0.8rem;
 }
 
 .nav-btn:hover {
-  background-color: hsla(0, 0%, 86%, 0.225);
+  background-color: var(--light-gray-hover-color);
   border-radius: 0.3em;
 }
 
 .friends {
-  color: #1b74e4;
-  border-bottom: 3px solid #1b74e4;
+  color: var(--primary-blue-color);
+  border-bottom: 3px solid var(--primary-blue-color);
 }
 
 .acc {
@@ -84,7 +105,7 @@ body {
 }
 
 .account-btn:hover {
-  background-color: hsla(0, 3%, 71%, 0.825);
+  background-color: var(--account-btn-hover-color);
 }
 
 .grid-container {
@@ -114,16 +135,19 @@ body {
 .search-section input {
   background: url("https://www.freeiconspng.com/uploads/magnifying-glass-icon-24.png")
     no-repeat;
-  background-position: left 50% center;
-  background-size: 20px;
-  width: 40px;
+  background-position: left 5% center;
+  background-size: 15px;
   outline: none;
   border: none;
   resize: none;
-  background-color: #eee;
-  padding: 0.7rem;
-  border-radius: 50%;
+  background-color: var(--main-body-color);
+  width: 120%;
+  overflow: hidden;
+  padding: 0.8rem;
+  padding-left: 2rem;
+  border-radius: 1000000000000px;
 }
+
 .friends-section-list {
   position: fixed;
   top: 60px;
@@ -143,7 +167,7 @@ body {
 .friends-section-list {
   width: 360px;
   height: 100vh;
-  background-color: white;
+  background-color: var(--white-theme-color);
   font-weight: bold;
   position: fixed;
 }
@@ -154,7 +178,7 @@ body {
 }
 
 .options-icon-container {
-  background-color: #eee;
+  background-color: var(--primary-button-background);
   padding: 0.4rem;
   margin-right: 1rem;
   border-radius: 50%;
@@ -171,6 +195,11 @@ body {
   height: 20px;
 }
 
+.options-icon-container:hover {
+  background-color: var(--dark-gray-hover-color);
+  cursor: pointer;
+}
+
 .list-element {
   display: flex;
   align-items: center;
@@ -179,14 +208,14 @@ body {
   padding: 0.6rem;
 }
 
-.list-element:hover {
-  background-color: #ddd;
+.list-element:not(.selected):hover {
+  background-color: var(--light-gray-hover-color);
   border-radius: 0.3em;
   cursor: pointer;
 }
 
 .selected {
-  background-color: #ddd;
+  background-color: var(--light-gray-hover-color);
   border-radius: 0.3em;
 }
 
@@ -205,11 +234,10 @@ body {
 }
 
 .arrow-logo {
-  background-image: url(./friends-images/GmYHd0mlXQV.png);
-  background-position-x: 0px;
-  background-position-y: -150px;
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yo/r/MfZxBjV_wpj.png");
+  background-position: 0px -110px;
+  background-size: 190px 204px;
   background-repeat: no-repeat;
-  background-size: 190px 252px;
   width: 20px;
   height: 20px;
 }
@@ -224,7 +252,7 @@ body {
   align-items: center;
 
   padding: 1rem;
-  background-color: #ddd;
+  background-color: var(--logo-container-color);
   margin-right: 0.5rem;
   margin-left: 0.5rem;
   border-radius: 50%;
@@ -245,7 +273,7 @@ body {
 .home-logo {
   display: flex;
   align-items: center;
-  background-color: #1b74a1;
+  background-color: var(--primary-blue-color);
   margin-left: 0.5rem;
   border-radius: 50%;
   width: 2rem;
@@ -265,7 +293,7 @@ body {
   left: 50%;
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
-  -webkit-filter: invert(100%);
+  -webkit-filter: var(--invert-color);
 }
 
 .friend-requests-logo,
@@ -329,7 +357,7 @@ body {
 }
 
 .see-all {
-  color: #1b74e4;
+  color: var(--primary-blue-color);
 }
 
 .grid-container-friend-requests,
@@ -348,10 +376,10 @@ body {
 }
 
 .grid-item-requests {
-  background-color: white;
+  background-color: var(--white-theme-color);
   width: 210px;
   height: 365px;
-  box-shadow: 0 0 5px 0 hsla(0, 3%, 71%, 0.825);
+  box-shadow: 0 0 5px 0 var(--account-btn-hover-color);
 }
 
 .profile-img-container img {
@@ -363,8 +391,15 @@ body {
 }
 
 .profile-name {
-  font-weight: bold;
+  font-weight: 500;
   margin-left: 0.5rem;
+  color: var(--header-color);
+  margin-bottom: 0.5rem;
+}
+
+.profile-name:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .mutual-friends {
@@ -387,14 +422,14 @@ body {
 }
 
 .img-container img {
-  border: 1px solid white;
+  border: 1px solid var(--white-theme-color);
   border-radius: 50%;
   z-index: 5;
 }
 
 .second-img {
   position: absolute;
-  border: 1px solid white;
+  border: 1px solid var(--white-theme-color);
   border-radius: 50%;
   left: 55%;
 }
@@ -420,25 +455,35 @@ body {
   border-radius: 0.5em;
   font-weight: bold;
   cursor: pointer;
+  margin-top: 0.2rem;
+}
+.add-friend button {
+  background-color: var(--light-blue-theme);
+  padding: 0.7rem 3.5rem;
+  color: var(--primary-blue-color);
+}
+
+.add-friend button:hover {
+  background-color: var(--dark-gray-hover-color);
 }
 
 .confirm button {
-  background-color: #1b74e4;
-  color: white;
-  margin-bottom: 0.5rem;
+  background-color: var(--primary-blue-color);
+  color: var(--white-theme-color);
+  margin-bottom: 0.1rem;
 }
 
 .delete button {
-  background-color: #ddd;
+  background-color: var(--primary-button-background);
   padding: 0.7em 4.3rem;
 }
 
 .confirm button:hover {
-  background-color: #1b74a1;
+  background-color: var(--primary-hover-blue);
 }
 
 .delete button:hover {
-  background-color: #aaa;
+  background-color: var(--delete-btn-hover-color);
 }
 
 .flex-row-centered {
@@ -451,6 +496,30 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.create-message-icon-container {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  padding: 1rem;
+  background-color: var(--white-theme-color);
+  border-radius: 50%;
+  box-shadow: 0 0 3px #777;
+}
+
+.create-message-icon {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yi/r/4UmT4V1o0oJ.png");
+  background-position: 0px -662px;
+  background-size: 34px 1554px;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+}
+
+.create-message-icon-container:hover {
+  cursor: pointer;
+  box-shadow: 0 0 3px #444;
 }
 
 @media (max-width: 1450px) {
@@ -475,6 +544,24 @@ body {
 }
 
 @media (max-width: 850px) {
+  .search-section input {
+    background: url("https://www.freeiconspng.com/uploads/magnifying-glass-icon-24.png")
+      no-repeat;
+    background-position: left 50% center;
+    background-size: 20px;
+    width: 40px;
+    outline: none;
+    border: none;
+    resize: none;
+    background-color: #eee;
+    padding: 0.7rem;
+    border-radius: 50%;
+  }
+
+  .search-section input::placeholder {
+    color: transparent;
+  }
+
   .grid-container-friend-requests,
   .grid-container-you-may-know,
   .friend-requests-header {
