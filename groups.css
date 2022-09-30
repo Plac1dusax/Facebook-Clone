@@ -11,10 +11,36 @@
   font-style: normal;
 }
 
+:root {
+  --primary-blue-color: #1b74e4;
+  --secondary-blue-color: #216fdb;
+  --primary-button-background: #e4e6eb;
+  --main-body-color: #eee;
+  --main-border-color: #aaa;
+  --title-color: #65676b;
+  --dark-gray-hover-color: hsla(0, 0%, 86%, 0.825);
+  --light-gray-hover-color: hsla(0, 3%, 71%, 0.125);
+  --account-btn-hover-color: hsla(0, 3%, 71%, 0.825);
+  --white-theme-color: white;
+  --user-online-color: green;
+  --custom-scrollbar-color: #ced0d4;
+  --invert-color: invert(100%);
+  --btn-hover-color: #ddd;
+  --primary-hover-blue: #1a63d3;
+  --header-color: #121;
+  --light-blue-theme: rgba(0, 227, 204, 0.2);
+  --light-blue-hover-theme: rgba(0, 159, 143, 0.2);
+  --nav-btn-color: #888;
+  --logo-container-color: #ddd;
+  --create-new-listing-logo-color: invert(39%) sepia(57%) saturate(200%)
+    saturate(200%) saturate(200%) saturate(200%) saturate(200%)
+    saturate(147.75%) hue-rotate(202deg) brightness(97%) contrast(96%);
+}
+
 body {
   padding: 0;
   margin: 0;
-  background-color: #eee;
+  background-color: var(--main-body-color);
   overflow-x: hidden;
   font-family: "Segoe UI", sans-serif;
   font-display: swap;
@@ -33,8 +59,8 @@ body {
   height: 60px;
   background-color: white;
   font-size: 12px;
-  border-bottom: 1px solid #ddd;
-  box-shadow: 0 0 5px 0 #ddd;
+  border-bottom: 1px solid var(--logo-container-color);
+  box-shadow: 0 0 5px 0 var(--logo-container-color);
   z-index: 50;
 }
 
@@ -47,7 +73,7 @@ body {
 }
 
 .more-btn-selected {
-  border-bottom: 3px solid #216fdb;
+  border-bottom: 3px solid var(--secondary-blue-color);
 }
 
 .navigation-section {
@@ -55,26 +81,26 @@ body {
 }
 
 .nav-btn {
-  color: #888;
+  color: var(--nav-btn-color);
   cursor: pointer;
   min-width: 100px;
   padding: 0.8rem;
 }
 
 .nav-btn:hover {
-  background-color: hsla(0, 0%, 86%, 0.225);
+  background-color: var(--light-gray-hover-color);
   border-radius: 0.3em;
 }
 
 .watch {
-  color: #1b74e4;
-  border-bottom: 3px solid #1b74e4;
+  color: var(--primary-blue-color);
+  border-bottom: 3px solid var(--primary-blue-color);
 }
 
 .acc {
   cursor: pointer;
   margin-right: 1rem;
-  background-color: #ddd;
+  background-color: var(--logo-container-color);
   padding: 0.5rem;
   border-radius: 50%;
 }
@@ -84,7 +110,7 @@ body {
 }
 
 .account-btn:hover {
-  background-color: hsla(0, 3%, 71%, 0.825);
+  background-color: var(--account-btn-hover-color);
 }
 
 .grid-container {
@@ -120,7 +146,7 @@ body {
   outline: none;
   border: none;
   resize: none;
-  background-color: #eee;
+  background-color: var(--main-body-color);
   padding: 0.7rem;
   border-radius: 50%;
 }
@@ -142,18 +168,19 @@ body {
 
   width: 360px;
   height: 100vh;
-  background-color: white;
+  background-color: var(--white-theme-color);
   font-weight: bold;
 }
 
 .groups-section-header {
   margin-top: 1rem;
+  margin-bottom: 0.5rem;
   margin-left: 0.5rem;
   font-size: 1.5rem;
 }
 
 .options-icon-container {
-  background-color: #eee;
+  background-color: var(--primary-button-background);
   padding: 0.4rem;
   margin-right: 1rem;
   border-radius: 50%;
@@ -170,6 +197,11 @@ body {
   height: 20px;
 }
 
+.options-icon-container:hover {
+  background-color: var(--dark-gray-hover-color);
+  cursor: pointer;
+}
+
 .groups-section input {
   background: url("https://www.freeiconspng.com/uploads/magnifying-glass-icon-24.png")
     no-repeat;
@@ -178,7 +210,7 @@ body {
   outline: none;
   border: none;
   resize: none;
-  background-color: #eee;
+  background-color: var(--main-body-color);
   width: 100%;
   overflow: hidden;
   padding: 0.8rem;
@@ -200,7 +232,7 @@ body {
 }
 
 .list-element:hover {
-  background-color: #ddd;
+  background-color: var(--logo-container-color);
   border-radius: 0.3em;
   cursor: pointer;
 }
@@ -210,18 +242,18 @@ body {
 }
 
 .selected {
-  background-color: #ddd;
+  background-color: var(--logo-container-color);
   border-radius: 0.3em;
 }
 
 .logo-container {
   padding: 0.4rem;
   border-radius: 50%;
-  background-color: #ddd;
+  background-color: var(--logo-container-color);
 }
 
 .logo-container-your-feed {
-  background-color: #1b74e4;
+  background-color: var(--secondary-blue-color);
 }
 
 .logo-your-feed {
@@ -230,7 +262,7 @@ body {
   background-size: 34px 1622px;
   width: 20px;
   height: 20px;
-  -webkit-filter: invert(100%);
+  -webkit-filter: var(--invert-color);
 }
 
 .logo-discover {
@@ -247,13 +279,13 @@ body {
   align-items: center;
   justify-content: center;
 
-  background-color: rgba(0, 227, 204, 0.2);
+  background-color: var(--light-blue-theme);
   padding: 0.5rem 1rem;
   border-radius: 0.3em;
 }
 
 .create-new-groups:hover {
-  background-color: rgba(0, 159, 143, 0.2);
+  background-color: var(--light-blue-hover-theme);
   cursor: pointer;
 }
 
@@ -264,14 +296,12 @@ body {
   width: 16px;
   height: 16px;
   background-repeat: no-repeat;
-  -webkit-filter: invert(39%) sepia(57%) saturate(200%) saturate(200%)
-    saturate(200%) saturate(200%) saturate(200%) saturate(147.75%)
-    hue-rotate(202deg) brightness(97%) contrast(96%);
+  -webkit-filter: var(--create-new-listing-logo-color);
   margin-right: 0.5rem;
 }
 
 .create-new-groups-text {
-  color: #1877f2;
+  color: var(--secondary-blue-color);
 }
 
 .groups-you-manage,
@@ -345,7 +375,7 @@ body {
   width: 590px;
   margin: 2rem auto;
   margin-left: 2rem;
-  background-color: #eee;
+  background-color: var(--main-body-color);
   padding: 1rem;
 }
 
@@ -380,7 +410,7 @@ body {
   border-radius: 50%;
   bottom: 15px;
   left: 15px;
-  border: 1px solid white;
+  border: 1px solid var(--white-theme-color);
 }
 
 .op-name {
@@ -456,7 +486,7 @@ body {
 }
 
 .post {
-  background-color: white;
+  background-color: var(--white-theme-color);
   margin-bottom: 2rem;
   border-radius: 0.3em;
   max-width: 590px;
@@ -559,7 +589,7 @@ body {
 
 .reaction:hover {
   border-radius: 0.3em;
-  background-color: #eee;
+  background-color: var(--dark-gray-hover-color);
 }
 
 .reaction > div {
@@ -572,7 +602,7 @@ body {
 
 .emotions-container {
   position: absolute;
-  background-color: white;
+  background-color: var(--white-theme-color);
   border-radius: 50000000000000000px;
   left: -2rem;
   top: -3.3rem;
@@ -608,14 +638,28 @@ body {
   transform: scale(2);
 }
 
-.like-btn {
-  background-image: url(./images/reactions/kUVRLWRtG-0.png);
-  background-position: center;
-  background-size: 2rem;
+.like-btn,
+.comment-btn,
+.share-btn {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yR/r/6CoDDGEBGGa.png");
+  background-size: 26px 754px;
   background-repeat: none;
-  background-position-y: 43.5%;
-  width: 2rem;
-  height: 1.5rem;
+  width: 18px;
+  height: 18px;
+  -webkit-filter: invert(39%) sepia(21%) saturate(200%) saturate(109.5%)
+    hue-rotate(174deg) brightness(94%) contrast(86%);
+}
+
+.like-btn {
+  background-position: 0px -262px;
+}
+
+.comment-btn {
+  background-position: 0px -272px;
+}
+
+.share-btn {
+  background-position: 0px -346px;
 }
 
 .like-btn-like {
@@ -699,16 +743,6 @@ body {
   font-weight: 500;
 }
 
-.comment-btn {
-  background-image: url(./images/reactions/kUVRLWRtG-0.png);
-  background-position-y: 38.3%;
-}
-
-.share-btn {
-  background-image: url(./images/reactions/kUVRLWRtG-0.png);
-  background-position-y: 46%;
-}
-
 .filter {
   width: 100%;
   height: 1rem;
@@ -787,10 +821,10 @@ body {
   content: "";
   width: 0.7rem;
   height: 0.7rem;
-  background-color: green;
+  background-color: var(--user-online-color);
   border-radius: 50%;
   position: absolute;
-  border: 3px solid white;
+  border: 3px solid var(--white-theme-color);
   top: 65%;
   left: 65%;
 }
@@ -907,7 +941,7 @@ body {
 
 .emotions-container-comment {
   position: absolute;
-  background-color: white;
+  background-color: var(--white-theme-color);
   border-radius: 50000000000000000px;
   left: -0.5rem;
   top: -3rem;
@@ -1014,7 +1048,7 @@ body {
   position: fixed;
   top: 80px;
   right: 40px;
-  background-color: white;
+  background-color: var(--white-theme-color);
   box-shadow: 0 0 5px 0 hsla(0, 3%, 71%, 0.825);
   border-radius: 0.3em;
 }
@@ -1170,7 +1204,7 @@ body {
 }
 
 .slide-btn:hover {
-  background-color: #eee;
+  background-color: var(--main-body-color);
   cursor: pointer;
 }
 
@@ -1190,6 +1224,30 @@ body {
   display: none;
 }
 
+.create-message-icon-container {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  padding: 1rem;
+  background-color: var(--white-theme-color);
+  border-radius: 50%;
+  box-shadow: 0 0 3px #777;
+}
+
+.create-message-icon {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yi/r/4UmT4V1o0oJ.png");
+  background-position: 0px -662px;
+  background-size: 34px 1554px;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+}
+
+.create-message-icon-container:hover {
+  cursor: pointer;
+  box-shadow: 0 0 3px #444;
+}
+
 @media (max-width: 1500px) {
   .friends-groups-section {
     position: relative;
@@ -1198,7 +1256,7 @@ body {
     padding: 1rem;
     width: 700px;
     height: 435px;
-    background-color: white;
+    background-color: var(--white-theme-color);
     box-shadow: 0 0 5px 0 hsla(0, 3%, 71%, 0.825);
     border-radius: 0.3em;
   }
@@ -1283,7 +1341,7 @@ body {
     padding: 1rem;
     width: 500px;
     height: 435px;
-    background-color: white;
+    background-color: var(--white-theme-color);
     box-shadow: 0 0 5px 0 hsla(0, 3%, 71%, 0.825);
     border-radius: 0.3em;
   }

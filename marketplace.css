@@ -11,10 +11,36 @@
   font-style: normal;
 }
 
+:root {
+  --primary-blue-color: #1b74e4;
+  --secondary-blue-color: #216fdb;
+  --primary-button-background: #e4e6eb;
+  --main-body-color: #eee;
+  --main-border-color: #aaa;
+  --title-color: #65676b;
+  --dark-gray-hover-color: hsla(0, 0%, 86%, 0.825);
+  --light-gray-hover-color: hsla(0, 3%, 71%, 0.125);
+  --account-btn-hover-color: hsla(0, 3%, 71%, 0.825);
+  --white-theme-color: white;
+  --user-online-color: green;
+  --custom-scrollbar-color: #ced0d4;
+  --invert-color: invert(100%);
+  --btn-hover-color: #ddd;
+  --primary-hover-blue: #1a63d3;
+  --header-color: #121;
+  --light-blue-theme: rgba(0, 227, 204, 0.2);
+  --light-blue-hover-theme: rgba(0, 159, 143, 0.2);
+  --nav-btn-color: #888;
+  --logo-container-color: #ddd;
+  --create-new-listing-logo-color: invert(39%) sepia(57%) saturate(200%)
+    saturate(200%) saturate(200%) saturate(200%) saturate(200%)
+    saturate(147.75%) hue-rotate(202deg) brightness(97%) contrast(96%);
+}
+
 body {
   padding: 0;
   margin: 0;
-  background-color: #eee;
+  background-color: var(--main-body-color);
   overflow-x: hidden;
   font-family: "Segoe UI", sans-serif;
   font-display: swap;
@@ -47,7 +73,7 @@ body {
 }
 
 .more-btn-selected {
-  border-bottom: 3px solid #216fdb;
+  border-bottom: 3px solid var(--secondary-blue-color);
 }
 
 .navigation-section {
@@ -55,31 +81,31 @@ body {
 }
 
 .nav-btn {
-  color: #888;
+  color: var(--nav-btn-color);
   cursor: pointer;
   min-width: 100px;
   padding: 0.8rem;
 }
 
 .nav-btn:hover {
-  background-color: hsla(0, 0%, 86%, 0.225);
+  background-color: var(--light-gray-hover-color);
   border-radius: 0.3em;
 }
 
 .acc {
   cursor: pointer;
   margin-right: 1rem;
-  background-color: #ddd;
+  background-color: var(--logo-container-color);
   padding: 0.5rem;
   border-radius: 50%;
 }
 
 .marketplace {
-  border-bottom: 3px solid #1b74e4;
+  border-bottom: 3px solid var(--primary-blue-color);
 }
 
 .marketplace svg {
-  color: #1b74e4;
+  color: var(--primary-blue-color);
 }
 
 .acc:last-child {
@@ -87,7 +113,7 @@ body {
 }
 
 .account-btn:hover {
-  background-color: hsla(0, 3%, 71%, 0.825);
+  background-color: var(--account-btn-hover-color);
 }
 
 .grid-container {
@@ -123,7 +149,7 @@ body {
   outline: none;
   border: none;
   resize: none;
-  background-color: #eee;
+  background-color: var(--main-body-color);
   padding: 0.7rem;
   border-radius: 50%;
 }
@@ -145,7 +171,7 @@ body {
 
   width: 360px;
   height: 100vh;
-  background-color: white;
+  background-color: var(--white-theme-color);
   font-weight: bold;
 }
 
@@ -157,7 +183,7 @@ body {
   outline: none;
   border: none;
   resize: none;
-  background-color: #eee;
+  background-color: var(--main-body-color);
   width: 100%;
   overflow: hidden;
   padding: 0.8rem;
@@ -172,8 +198,20 @@ body {
   font-size: 1.5rem;
 }
 
+.marketplace-section::-webkit-scrollbar-thumb {
+  background-color: var(--custom-scrollbar-color);
+}
+
+.marketplace-section::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.marketplace-section::-webkit-scrollbar {
+  width: 0.5vw;
+}
+
 .options-icon-container {
-  background-color: #eee;
+  background-color: var(--primary-button-background);
   padding: 0.4rem;
   margin-right: 1rem;
   border-radius: 50%;
@@ -190,10 +228,15 @@ body {
   height: 20px;
 }
 
+.options-icon-container:hover {
+  background-color: var(--dark-gray-hover-color);
+  cursor: pointer;
+}
+
 .logo-container {
   padding: 0.4rem;
   border-radius: 50%;
-  background-color: #ddd;
+  background-color: var(--logo-container-color);
 }
 
 .logo {
@@ -342,7 +385,7 @@ body {
 }
 
 .logo-container-browse-all {
-  background-color: #1877f2;
+  background-color: var(--secondary-blue-color);
 }
 
 .list {
@@ -359,7 +402,7 @@ body {
 }
 
 .list-element:hover {
-  background-color: #ddd;
+  background-color: var(--btn-hover-color);
   border-radius: 0.3em;
   cursor: pointer;
 }
@@ -369,7 +412,7 @@ body {
 }
 
 .selected {
-  background-color: #ddd;
+  background-color: var(--btn-hover-color);
   border-radius: 0.3em;
 }
 
@@ -378,13 +421,13 @@ body {
   align-items: center;
   justify-content: center;
 
-  background-color: rgba(0, 227, 204, 0.2);
+  background-color: var(--light-blue-theme);
   padding: 0.5rem 1rem;
   border-radius: 0.3em;
 }
 
 .create-new-listing:hover {
-  background-color: rgba(0, 159, 143, 0.2);
+  background-color: var(--light-blue-hover-theme);
   cursor: pointer;
 }
 
@@ -395,14 +438,12 @@ body {
   width: 16px;
   height: 16px;
   background-repeat: no-repeat;
-  -webkit-filter: invert(39%) sepia(57%) saturate(200%) saturate(200%)
-    saturate(200%) saturate(200%) saturate(200%) saturate(147.75%)
-    hue-rotate(202deg) brightness(97%) contrast(96%);
+  -webkit-filter: var(--create-new-listing-logo-color);
   margin-right: 0.5rem;
 }
 
 .create-new-listing-text {
-  color: #1877f2;
+  color: var(--secondary-blue-color);
 }
 
 .filters {
@@ -412,20 +453,20 @@ body {
 
   margin-top: 1rem;
   padding: 1rem;
-  border-top: 1px solid #888;
-  border-bottom: 1px solid #888;
+  border-top: 1px solid var(--main-body-color);
+  border-bottom: 1px solid var(--main-body-color);
 }
 
 .filter-details {
   margin-top: 1rem;
-  color: #1877f2;
+  color: var(--secondary-blue-color);
   font-size: 0.85rem;
   padding: 0.2rem;
   border-radius: 0.3em;
 }
 
 .filter-details:hover {
-  background-color: #ddd;
+  background-color: var(--btn-hover-color);
   cursor: pointer;
 }
 
@@ -453,7 +494,27 @@ body {
 }
 
 .location-info {
-  color: #1b74e4;
+  color: var(--secondary-blue-color);
+  position: relative;
+}
+
+.location-info::before {
+  content: "";
+  position: absolute;
+  left: -12%;
+  top: 10%;
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/y4/r/pxVoya6MKPC.png");
+  background-position: 0px -1584px;
+  background-size: 34px 1638px;
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  -webkit-filter: var(--create-new-listing-logo-color);
+}
+
+.location-info:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .products-grid-container {
@@ -461,6 +522,10 @@ body {
   grid-template-columns: repeat(4, 268px);
   grid-auto-rows: auto;
   gap: 10px;
+}
+
+.product-grid-item:hover {
+  cursor: pointer;
 }
 
 .item-image img {
@@ -510,7 +575,7 @@ body {
   left: 10px;
   border-bottom: 1px solid black;
   padding: 1rem 0;
-  background-color: white;
+  background-color: var(--white-theme-color);
 
   display: none;
 }
@@ -524,7 +589,7 @@ body {
   border-radius: 50%;
   width: 32px;
   height: 32px;
-  background-color: #ddd;
+  background-color: var(--logo-container-color);
   position: relative;
 }
 
@@ -547,7 +612,7 @@ body {
   padding: 0.4rem;
   border-radius: 100000000000px;
   font-weight: 500;
-  background-color: #ddd;
+  background-color: var(--logo-container-color);
 }
 
 .marketplace-shrink-search input {
@@ -558,13 +623,37 @@ body {
   outline: none;
   border: none;
   resize: none;
-  background-color: #eee;
+  background-color: var(--main-body-color);
   width: 120%;
   overflow: hidden;
   padding: 0.8rem;
   padding-left: 2rem;
   border-radius: 1000000000000px;
   margin-top: 1rem;
+}
+
+.create-message-icon-container {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  padding: 1rem;
+  background-color: var(--white-theme-color);
+  border-radius: 50%;
+  box-shadow: 0 0 3px #777;
+}
+
+.create-message-icon {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yi/r/4UmT4V1o0oJ.png");
+  background-position: 0px -662px;
+  background-size: 34px 1554px;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+}
+
+.create-message-icon-container:hover {
+  cursor: pointer;
+  box-shadow: 0 0 3px #444;
 }
 
 @media (max-width: 1400px) {
