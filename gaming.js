@@ -60,8 +60,12 @@ function handleTimeline(e, post) {
   const percent = Math.min(Math.max(0, e.x - rect.x), rect.width) / rect.width
   video.currentTime = percent * video.duration
 
-  // container.style.setProperty("--progress-position", percent)
   container.style.setProperty("--preview-position", percent)
+
+  if (isScrubbing) {
+    e.preventDefault()
+    container.style.setProperty("--progress-position", percent)
+  }
 }
 
 // Post video play-pause
@@ -204,7 +208,6 @@ function playVideo(e) {
 }
 
 // Volume
-
 muteBtn.forEach(btn => {
   btn.addEventListener("click", e => {
     const container = e.target.closest(".video-container")
@@ -250,64 +253,3 @@ video.forEach(video => {
 function toggleMute(video) {
   video.muted = !video.muted
 }
-
-// timelineContainer.forEach(container => {
-//   container.addEventListener("mousemove", e => {
-//     handleTimelineUpdate(e, container)
-//   })
-// })
-
-// timelineContainer.forEach(container => {
-//   container.addEventListener("mousemove", e => {
-//     const parent = e.target.closest(".video-container")
-//     const video = parent.querySelector("video")
-//     toggleScrubbing(e, container, video)
-//   })
-// })
-
-// document.addEventListener("mouseup", e => {
-//   const videoContainer = e.target.closest(".video-container")
-//   const container = videoContainer.querySelector(".timeline-container")
-//   const video = videoContainer.querySelector("video")
-
-//   if (isScrubbing) toggleScrubbing(e, container, video)
-// })
-
-// document.addEventListener("mousemove", e => {
-//   const videoContainer = e.target.closest(".video-container")
-//   const container = videoContainer.querySelector(".timeline-container")
-
-//   if (isScrubbing) handleTimelineUpdate(e, container)
-// })
-
-// let isScrubbing = false
-// let wasPaused
-
-// function toggleScrubbing(e, container, video) {
-//   const rect = container.getBoundingClientRect()
-//   const percent = Math.min(Math.max(0, e.x - rect.x), rect.width) / rect.width
-//   isScrubbing = (e.buttons & 1) === 1
-//   container.classList.toggle("scrubbing", isScrubbing)
-
-//   if (isScrubbing) {
-//     wasPaused = video.paused
-//     video.pause()
-//   } else {
-//     video.currentTime = percent * video.duration
-//     if (!wasPaused) video.play()
-//   }
-
-//   handleTimelineUpdate(e, container)
-// }
-
-// function handleTimelineUpdate(e, container) {
-//   const rect = container.getBoundingClientRect()
-//   const percent = Math.min(Math.max(0, e.x - rect.x), rect.width) / rect.width
-
-//   container.style.setProperty("--preview-position", percent)
-
-//   if (isScrubbing) {
-//     e.preventDefault()
-//     container.style.setProperty("--progress-position", percent)
-//   }
-// }

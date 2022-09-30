@@ -1147,6 +1147,15 @@ body {
   background-position: 0px -346px;
 }
 
+.comments {
+  color: var(--title-color);
+}
+
+.comments:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .like-btn-like {
   background-image: url(./images/buttons/like-reaction-btn.png);
   background-position: center;

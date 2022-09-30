@@ -179,6 +179,18 @@ body {
   font-size: 1.5rem;
 }
 
+.groups-section::-webkit-scrollbar-thumb {
+  background-color: var(--custom-scrollbar-color);
+}
+
+.groups-section::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.groups-section::-webkit-scrollbar {
+  width: 0.5vw;
+}
+
 .options-icon-container {
   background-color: var(--primary-button-background);
   padding: 0.4rem;

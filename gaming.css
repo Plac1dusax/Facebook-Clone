@@ -191,6 +191,18 @@ body {
   border-radius: 1000000000000px;
 }
 
+.gaming-section::-webkit-scrollbar-thumb {
+  background-color: var(--custom-scrollbar-color);
+}
+
+.gaming-section::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.gaming-section::-webkit-scrollbar {
+  width: 0.5vw;
+}
+
 .gaming-section-header {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -1266,7 +1278,7 @@ video {
 .timeline .thumb-indicator {
   --scale: 0;
   position: absolute;
-  transform: translateX(-50%) scale(--scale);
+  transform: translateX(-50%) scale(var(--scale));
   height: 200%;
   top: -50%;
   left: calc(var(--progress-position) * 100%);
@@ -1282,7 +1294,7 @@ video {
   display: block;
 }
 
-.video-container.scrubbing .thumb-indicator::before,
+.video-container.scrubbing .thumb-indicator,
 .timeline-container:hover .thumb-indicator {
   --scale: 1;
 }
@@ -1293,14 +1305,30 @@ video {
 }
 
 .buttons-container {
-  padding: 0.2rem 1rem;
-  margin-top: 1rem;
-  height: 3rem;
-
   display: flex;
   justify-content: space-around;
+  align-items: center;
 
   border-top: 0.5px solid #999;
+}
+
+.likes-and-comments {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.total-likes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.like-counter {
+  margin-left: 0.5rem;
 }
 
 .reaction {
@@ -1326,6 +1354,47 @@ video {
 
 .reaction-like {
   position: relative;
+}
+
+.reactions {
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.reactions img {
+  margin-left: -0.5rem;
+}
+
+.community-reaction img {
+  width: 1rem;
+  height: 1rem;
+}
+
+.community-reaction-love,
+.community-reaction-care {
+  z-index: -5;
+}
+
+.community-reaction-like img,
+.community-reaction-love img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.community-reaction-care img,
+.community-reaction-smile img {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.comments {
+  color: var(--title-color);
+}
+
+.comments:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .emotions-container {
