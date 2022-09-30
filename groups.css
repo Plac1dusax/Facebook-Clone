@@ -177,6 +177,20 @@ body {
   margin-bottom: 0.5rem;
   margin-left: 0.5rem;
   font-size: 1.5rem;
+  width: 340px;
+}
+
+.groups-section-fixed {
+  position: fixed;
+  z-index: 10;
+  background-color: var(--white-theme-color);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--dark-gray-hover-color);
+}
+
+.groups-list-section {
+  position: relative;
+  top: 100px;
 }
 
 .groups-section::-webkit-scrollbar-thumb {
@@ -378,6 +392,7 @@ body {
 
 .posts-section-filter {
   color: #888;
+  margin-bottom: 0.2rem;
 }
 
 .post-container {
@@ -387,6 +402,7 @@ body {
   width: 590px;
   margin: 2rem auto;
   margin-left: 2rem;
+  margin-top: 0.5rem;
   background-color: var(--main-body-color);
   padding: 1rem;
 }

@@ -251,6 +251,11 @@ body {
   cursor: pointer;
 }
 
+.edit:hover {
+  background-color: var(--dark-gray-hover-color);
+  border-radius: 0.5em;
+}
+
 .personal-shortcut-text {
   margin-top: 0.3rem;
 }
@@ -266,6 +271,7 @@ body {
   color: #216fdb;
   font-size: 0.9375rem;
   font-weight: 400;
+  padding: 0 0.5rem;
 }
 
 .custom-shortcuts {

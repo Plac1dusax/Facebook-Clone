@@ -206,16 +206,20 @@ body {
 .gaming-section-header {
   margin-top: 1rem;
   margin-bottom: 1rem;
-  margin-left: 0.5rem;
+  margin-left: 0;
   font-size: 1.5rem;
   border-bottom: 1px solid var(--main-body-color);
-  width: 330px;
+  width: 340px;
   background-color: var(--white-theme-color);
   margin-top: 0;
   padding: 0.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.header {
+  margin-left: 0.5rem;
 }
 
 .gaming-section-fixed {
@@ -228,7 +232,7 @@ body {
 }
 
 .options-icon-container {
-  background-color: var(--main-body-color);
+  background-color: var(--primary-button-background);
   padding: 0.4rem;
   margin-right: 1rem;
   border-radius: 50%;
@@ -243,6 +247,11 @@ body {
   background-repeat: no-repeat;
   width: 20px;
   height: 20px;
+}
+
+.options-icon-container:hover {
+  background-color: var(--dark-gray-hover-color);
+  cursor: pointer;
 }
 
 .gaming-list {
@@ -367,6 +376,11 @@ body {
   object-fit: cover;
 }
 
+.streamer:hover {
+  background-color: var(--dark-gray-hover-color);
+  cursor: pointer;
+}
+
 .streamer-name {
   font-weight: normal;
 }
@@ -380,8 +394,18 @@ body {
 .see-more {
   display: flex;
   align-items: center;
-
+  padding: 0.3rem;
+  margin-left: 0.7rem;
   margin-bottom: 2rem;
+}
+
+.see-more-logo-container {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--dark-gray-hover-color);
+  position: relative;
+  margin-right: 0.5rem;
 }
 
 .see-more-logo {
@@ -389,12 +413,18 @@ body {
   background-position: 0px -62px;
   background-size: 190px 204px;
   background-repeat: no-repeat;
-  background-color: #888;
-  border-radius: 50%;
   width: 24px;
   height: 24px;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.see-more:hover {
+  background-color: var(--dark-gray-hover-color);
+  cursor: pointer;
+  border-radius: 0.5rem;
 }
 
 .my-games {
@@ -418,6 +448,13 @@ body {
   color: var(--secondary-blue-color);
   font-size: 0.9rem;
   font-weight: 400;
+  padding: 0 0.5rem;
+}
+
+.see-all:hover {
+  cursor: pointer;
+  background-color: var(--dark-gray-hover-color);
+  border-radius: 0.5em;
 }
 
 .create-shortcut-text {
@@ -432,14 +469,20 @@ body {
   align-items: center;
 
   margin: 0.5rem 0;
+  padding: 0.3rem;
+  padding-left: 0;
 }
 
 .add-games-logo-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   width: 36px;
   height: 36px;
+  background-color: var(--dark-gray-hover-color);
+  border-radius: 50%;
+  margin-right: 0.5rem;
 }
 
 .add-games-logo {
@@ -447,10 +490,15 @@ body {
   background-position: 0px -134px;
   background-size: 74px 364px;
   background-repeat: no-repeat;
-  background-color: #888;
-  border-radius: 50%;
   width: 24px;
   height: 24px;
+  position: absolute;
+}
+
+.add-games-container:hover {
+  background-color: var(--dark-gray-hover-color);
+  cursor: pointer;
+  border-radius: 0.5em;
 }
 
 .logo-all-games {
