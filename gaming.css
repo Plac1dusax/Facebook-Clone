@@ -1435,6 +1435,30 @@ video {
   background-color: #c6e2ee;
 }
 
+.create-message-icon-container {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  padding: 1rem;
+  background-color: var(--white-theme-color);
+  border-radius: 50%;
+  box-shadow: 0 0 3px #777;
+}
+
+.create-message-icon {
+  background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yi/r/4UmT4V1o0oJ.png");
+  background-position: 0px -662px;
+  background-size: 34px 1554px;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+}
+
+.create-message-icon-container:hover {
+  cursor: pointer;
+  box-shadow: 0 0 3px #444;
+}
+
 @media (max-width: 1370px) {
   .recent-activities-and-features {
     left: 400px;
